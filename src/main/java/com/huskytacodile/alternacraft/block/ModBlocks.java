@@ -2,6 +2,7 @@ package com.huskytacodile.alternacraft.block;
 
 import com.huskytacodile.alternacraft.Alternacraft;
 
+import com.huskytacodile.alternacraft.block.custom.DNAExtractorBlock;
 import com.huskytacodile.alternacraft.item.ModCreativeModeTab;
 import com.huskytacodile.alternacraft.item.ModItems;
 
@@ -9,6 +10,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 
@@ -19,6 +21,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
+
+import static net.minecraft.core.QuartPos.fromBlock;
+import static net.minecraftforge.registries.ForgeRegistries.BLOCK_ENTITIES;
 
 public class ModBlocks {
 
@@ -175,7 +180,7 @@ public class ModBlocks {
             () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> DNA_EXTRACTOR = registerBlock("dna_extractor",
-            () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
+            () -> new DNAExtractorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()));
 
     public static final RegistryObject<Block> DNA_COMBINATOR = registerBlock("dna_combinator",
             () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));

@@ -16,6 +16,7 @@ public class ModOreGeneration {
 
         base.add(() -> ModPlacedFeatures.TITANIUM_ORE_PLACED);
         base.add(() -> ModPlacedFeatures.PAINITE_ORE_PLACED);
+        base.add(() -> ModPlacedFeatures.FOSSIL_ORE_PLACED);
     }
 }
 

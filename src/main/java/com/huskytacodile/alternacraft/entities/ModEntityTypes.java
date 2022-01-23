@@ -17,10 +17,10 @@ public class ModEntityTypes {
             = DeferredRegister.create(ForgeRegistries.ENTITIES, Alternacraft.MOD_ID);
 
     public static final RegistryObject<EntityType<JPSpinoEntity>> JPSPINO =
-            ENTITY_TYPES.register("jpfemalespino",
+            ENTITY_TYPES.register("jpespino",
                     () -> EntityType.Builder.of(JPSpinoEntity::new,
                                     MobCategory.CREATURE).sized(4f, 4f)
-                            .build(new ResourceLocation(Alternacraft.MOD_ID, "jpfemalespino").toString()));
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "jpspino").toString()));
 
 
     public static final RegistryObject<EntityType<AlternasaurusEntity>> ALTERNASAURUS =

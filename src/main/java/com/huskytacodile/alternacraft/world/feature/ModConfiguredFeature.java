@@ -24,4 +24,7 @@ public class ModConfiguredFeature {
 
     public static final ConfiguredFeature<?, ?> PAINITE_ORE = FeatureUtils.register("painite_ore",
             Feature.ORE.configured(new OreConfiguration(OVERWORLD_PAINITE_ORES, 4)));
+
+    public static final List<OreConfiguration.TargetBlockState> OVERWORLD_FOSSIL_ORES = List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.FOSSIL_ORE.get().defaultBlockState()));
 }
