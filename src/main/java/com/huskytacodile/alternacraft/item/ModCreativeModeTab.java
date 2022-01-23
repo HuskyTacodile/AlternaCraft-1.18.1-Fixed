@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.item;
 
 
+import com.huskytacodile.alternacraft.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
@@ -11,10 +12,10 @@ public class ModCreativeModeTab {
             return new ItemStack(ModItems.FOSSIL.get());
         }
     };
-    public static final CreativeModeTab WIP_TAB = new CreativeModeTab("wip_tab") {
+    public static final CreativeModeTab BLOCKS_TAB = new CreativeModeTab("blocks_tab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.AMONG_US_RED.get());
+            return new ItemStack(ModBlocks.CONCRETE_BRICKS.get());
         }
     };
 }

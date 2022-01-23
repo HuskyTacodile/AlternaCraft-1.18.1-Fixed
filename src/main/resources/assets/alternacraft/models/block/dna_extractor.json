@@ -1,8 +1,8 @@
 {
 	"texture_size": [48, 48],
 	"textures": {
-		"0": "dna_extractor",
-		"particle": "dna_extractor"
+		"0": "alternacraft:block/dna_extractor",
+		"particle": "alternacraft:block/dna_extractor"
 	},
 	"elements": [
 		{

@@ -22,6 +22,6 @@ public class ModConfiguredFeature {
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.PAINITE_ORE.get().defaultBlockState()),
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_PAINITE_ORE.get().defaultBlockState()));
 
-    public static final ConfiguredFeature<?, ?> PAINITE_ORE = FeatureUtils.register("titanium_ore",
+    public static final ConfiguredFeature<?, ?> PAINITE_ORE = FeatureUtils.register("painite_ore",
             Feature.ORE.configured(new OreConfiguration(OVERWORLD_PAINITE_ORES, 4)));
 }

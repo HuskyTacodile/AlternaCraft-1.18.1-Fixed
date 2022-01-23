@@ -1,9 +1,7 @@
 package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.huskytacodile.alternacraft.client.model.entity.IndominusElementalModel;
-import com.huskytacodile.alternacraft.client.model.entity.IndominusFemaleModel;
 import com.huskytacodile.alternacraft.entities.IndominusElementalEntity;
-import com.huskytacodile.alternacraft.entities.IndominusFemaleEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;

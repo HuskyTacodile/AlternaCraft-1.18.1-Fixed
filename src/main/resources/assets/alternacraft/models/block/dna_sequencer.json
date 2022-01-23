@@ -1,8 +1,8 @@
 {
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "dna_sequencer",
-		"particle": "dna_sequencer"
+		"0": "alternacraft:block/dna_sequencer",
+		"particle": "alternacraft:block/dna_sequencer"
 	},
 	"elements": [
 		{

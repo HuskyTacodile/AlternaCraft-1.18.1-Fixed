@@ -127,5 +127,194 @@
     "sounds": [
       "alternacraft:spinosaurus_hurt"
     ]
+  },
+  "alternasaurus_idle": {
+    "category": "entities",
+    "subtitle": "alternacraft.alternasaurus_idle",
+    "sounds": [
+      "alternacraft:alternasaurus_idle"
+    ]
+  },
+  "alternasaurus_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.alternasaurus_hurt",
+    "sounds": [
+      "alternacraft:alternasaurus_hurt"
+    ]
+  },
+  "alternasaurus_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.alternasaurus_death",
+    "sounds": [
+      "alternacraft:alternasaurus_death"
+    ]
+  },
+  "t_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.t_ambient",
+    "sounds": [
+      "alternacraft:t_ambient"
+    ]
+  },
+  "t_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.t_hurt",
+    "sounds": [
+      "alternacraft:t_hurt"
+    ]
+  },
+  "t_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.t_death",
+    "sounds": [
+      "alternacraft:t_death"
+    ]
+  },
+  "scorpius_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.scorpius_death",
+    "sounds": [
+      "alternacraft:scorpius_death"
+    ]
+  },
+  "scorpius_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.scorpius_ambient",
+    "sounds": [
+      "alternacraft:scorpius_ambient"
+    ]
+  },
+  "scorpius_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.scorpius_hurt",
+    "sounds": [
+      "alternacraft:scorpius_hurt"
+    ]
+  },
+  "allo_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.allo_hurt",
+    "sounds": [
+      "alternacraft:allo_hurt"
+    ]
+  },
+  "allo_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.allo_ambient",
+    "sounds": [
+      "alternacraft:allo_ambient"
+    ]
+  },
+  "allo_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.allo_death",
+    "sounds": [
+      "alternacraft:allo_death"
+    ]
+  },
+  "bary_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.bary_death",
+    "sounds": [
+      "alternacraft:bary_death"
+    ]
+  },
+  "bary_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.bary_ambient",
+    "sounds": [
+      "alternacraft:bary_ambient"
+    ]
+  },
+  "bary_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.bary_hurt",
+    "sounds": [
+      "alternacraft:bary_hurt"
+    ]
+  },
+  "tylo_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.tylo_death",
+    "sounds": [
+      "alternacraft:tylo_death"
+    ]
+  },
+  "tylo_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.tylo_ambient",
+    "sounds": [
+      "alternacraft:tylo_ambient"
+    ]
+  },
+  "tylo_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.tylo_hurt",
+    "sounds": [
+      "alternacraft:tylo_hurt"
+    ]
+  },
+  "mosa_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.mosa_death",
+    "sounds": [
+      "alternacraft:mosa_death"
+    ]
+  },
+  "mosa_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.mosa_ambient",
+    "sounds": [
+      "alternacraft:mosa_ambient"
+    ]
+  },
+  "mosa_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.mosa_hurt",
+    "sounds": [
+      "alternacraft:mosa_hurt"
+    ]
+  },
+  "alio_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.alio_death",
+    "sounds": [
+      "alternacraft:alio_death"
+    ]
+  },
+  "alio_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.alio_ambient",
+    "sounds": [
+      "alternacraft:alio_ambient"
+    ]
+  },
+  "alio_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.alio_hurt",
+    "sounds": [
+      "alternacraft:alio_hurt"
+    ]
+  },
+  "carcha_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.carcha_death",
+    "sounds": [
+      "alternacraft:carcha_death"
+    ]
+  },
+  "carcha_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.carcha_ambient",
+    "sounds": [
+      "alternacraft:carcha_ambient"
+    ]
+  },
+  "carcha_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.carcha_hurt",
+    "sounds": [
+      "alternacraft:carcha_hurt"
+    ]
   }
 }

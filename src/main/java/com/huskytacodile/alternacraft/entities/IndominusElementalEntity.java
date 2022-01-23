@@ -1,5 +1,6 @@
 package com.huskytacodile.alternacraft.entities;
 
+import com.huskytacodile.alternacraft.item.ModItems;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,6 +18,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NonTameRandomTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
@@ -38,6 +41,8 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
+import java.util.function.Predicate;
+
 
 public class IndominusElementalEntity extends TamableAnimal implements IAnimatable, ItemSteerable {
     private AnimationFactory factory = new AnimationFactory(this);
@@ -48,11 +53,31 @@ public class IndominusElementalEntity extends TamableAnimal implements IAnimatab
         super(p_i48575_1_, p_i48575_2_);
         this.setTame(false);
     }
+    public static final Predicate<LivingEntity> PREY_SELECTOR = (p_30437_) -> {
+        EntityType<?> entitytype = p_30437_.getType();
+        return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT
+                || entitytype == EntityType.COW || entitytype == EntityType.CHICKEN || entitytype == EntityType.PIG ||
+                entitytype == ModEntityTypes.JPSPINO.get()||
+                entitytype == ModEntityTypes.OXALAIA.get()||
+                entitytype == ModEntityTypes.TYRANNOSAURUS.get()||
+                entitytype == ModEntityTypes.YUTYRANNUS.get()||
+                entitytype == ModEntityTypes.CARCHA.get()||
+                entitytype == ModEntityTypes.ALIORAMUS.get()||
+                entitytype == ModEntityTypes.BARYONYX.get()||
+                entitytype == ModEntityTypes.BARYONYX_GEN2.get()||
+                entitytype == ModEntityTypes.TYLOSAURUS.get()||
+                entitytype == ModEntityTypes.MOSASAURUS.get()||
+                entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
+                entitytype == ModEntityTypes.INDORAPTOR.get()||
+                entitytype == ModEntityTypes.SCORPIUS.get()||
+                entitytype == ModEntityTypes.ALLOSAURUS.get()||
+                entitytype == ModEntityTypes.ACRO.get()||
+                entitytype == ModEntityTypes.ALTERNASAURUS.get();
+    };
     public boolean isFood(ItemStack p_70877_1_) {
         Item item = p_70877_1_.getItem();
         return item.isEdible() && item.getFoodProperties().isMeat();
     }
-
 
     @Override
     protected SoundEvent getAmbientSound()
@@ -123,7 +148,7 @@ public class IndominusElementalEntity extends TamableAnimal implements IAnimatab
         ItemStack itemstack = p_230254_1_.getItemInHand(p_230254_2_);
         Item item = itemstack.getItem();
         if (this.level.isClientSide) {
-            boolean flag = this.isOwnedBy(p_230254_1_) || this.isTame() || item == Items.NETHERITE_AXE && !this.isTame();
+            boolean flag = this.isOwnedBy(p_230254_1_) || this.isTame() || item == ModItems.TOTEM_OF_ELEMENT.get() && !this.isTame();
             return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
 
         } else {
@@ -137,7 +162,7 @@ public class IndominusElementalEntity extends TamableAnimal implements IAnimatab
                     return InteractionResult.SUCCESS;
                 }
                 p_230254_1_.startRiding(this);
-                } else if (item == Items.NETHERITE_AXE && !this.isOnFire()) {
+                } else if (item == ModItems.TOTEM_OF_ELEMENT.get() && !this.isOnFire()) {
                 if (!p_230254_1_.getAbilities().instabuild) {
                     itemstack.shrink(1);
                 }
@@ -248,6 +273,7 @@ public class IndominusElementalEntity extends TamableAnimal implements IAnimatab
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(Items.NETHERITE_SWORD), false));
         this.goalSelector.addGoal(0,new RandomSwimmingGoal(this,0,1));
         this.goalSelector.addGoal(2, new FloatGoal(this));
+        this.targetSelector.addGoal(5, new NonTameRandomTargetGoal<>(this, Animal.class, false, PREY_SELECTOR));
     }
     @Nullable
     @Override

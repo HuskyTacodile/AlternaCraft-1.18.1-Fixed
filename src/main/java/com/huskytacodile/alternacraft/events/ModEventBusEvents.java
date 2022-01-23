@@ -14,20 +14,24 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEventBusEvents {
     @SubscribeEvent
     public static void addEntityAttributes(EntityAttributeCreationEvent event) {
-        event.put(ModEntityTypes.JPFEMALESPINO.get(), JPFemaleSpinoEntity.attributes().build());
-        event.put(ModEntityTypes.INDOMINUS_FEMALE.get(), IndominusFemaleEntity.attributes().build());
-        event.put(ModEntityTypes.INDOMINUS_MALE.get(), IndominusMaleEntity.attributes().build());
+        event.put(ModEntityTypes.JPSPINO.get(), JPSpinoEntity.attributes().build());
+        event.put(ModEntityTypes.INDOMINUS.get(), IndominusEntity.attributes().build());
         event.put(ModEntityTypes.INDOMINUS_ELEMENTAL.get(), IndominusElementalEntity.attributes().build());
-        event.put(ModEntityTypes.ACRO_MALE.get(), AcroMaleEntity.attributes().build());
-        event.put(ModEntityTypes.ACRO_FEMALE.get(), AcroFemaleEntity.attributes().build());
-        event.put(ModEntityTypes.JPMALESPINO.get(), JPMaleSpinoEntity.attributes().build());
-        event.put(ModEntityTypes.MALESPINO.get(), MaleSpinoEntity.attributes().build());
-        event.put(ModEntityTypes.INDORAPTOR_MALE.get(), IndoraptorMaleEntity.attributes().build());
-        event.put(ModEntityTypes.INDORAPTOR_FEMALE.get(), IndoraptorFemaleEntity.attributes().build());
-        event.put(ModEntityTypes.INDORAPTOR_CHRISTMAS.get(), IndoraptorChristmasEntity.attributes().build());
-        event.put(ModEntityTypes.CERATOSUCHOPS_MALE.get(), MaleCeratosuchopsEntity.attributes().build());
-        event.put(ModEntityTypes.FEMALESPINO.get(), FemaleSpinoEntity.attributes().build());
-        event.put(ModEntityTypes.CERATOSUCHOPS_FEMALE.get(), FemaleSpinoEntity.attributes().build());
+        event.put(ModEntityTypes.ACRO.get(), AcroEntity.attributes().build());
+        event.put(ModEntityTypes.OXALAIA.get(), OxalaiaEntity.attributes().build());
+        event.put(ModEntityTypes.INDORAPTOR.get(), IndoraptorEntity.attributes().build());
+        event.put(ModEntityTypes.CERATOSUCHOPS.get(), CeratosuchopsEntity.attributes().build());
+        event.put(ModEntityTypes.ALTERNASAURUS.get(), AlternasaurusEntity.attributes().build());
+        event.put(ModEntityTypes.TYLOSAURUS.get(), TylosaurusEntity.attributes().build());
+        event.put(ModEntityTypes.MOSASAURUS.get(), MosasaurusEntity.attributes().build());
+        event.put(ModEntityTypes.TYRANNOSAURUS.get(), TyrannosaurusEntity.attributes().build());
+        event.put(ModEntityTypes.SCORPIUS.get(), ScorpiusEntity.attributes().build());
+        event.put(ModEntityTypes.ALLOSAURUS.get(), AllosaurusEntity.attributes().build());
+        event.put(ModEntityTypes.BARYONYX.get(), BaryonyxEntity.attributes().build());
+        event.put(ModEntityTypes.BARYONYX_GEN2.get(), BaryonyxGen2Entity.attributes().build());
+        event.put(ModEntityTypes.ALIORAMUS.get(), AlioramusEntity.attributes().build());
+        event.put(ModEntityTypes.CARCHA.get(), CarchaEntity.attributes().build());
+        event.put(ModEntityTypes.YUTYRANNUS.get(), YutyrannusEntity.attributes().build());
     }
 
     @SubscribeEvent

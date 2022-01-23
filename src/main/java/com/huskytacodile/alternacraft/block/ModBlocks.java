@@ -5,11 +5,10 @@ import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.item.ModCreativeModeTab;
 import com.huskytacodile.alternacraft.item.ModItems;
 
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 
@@ -27,6 +26,42 @@ public class ModBlocks {
             = DeferredRegister.create(ForgeRegistries.BLOCKS, Alternacraft.MOD_ID);
 
 
+    public static final RegistryObject<Block> CLADOPHLEBIS = registerBlock("cladophlebis",
+            () -> new FlowerBlock(MobEffects.REGENERATION, 1,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+
+    public static final RegistryObject<Block> JW_BANNER = registerBlock("jw_banner",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_BANNER)));
+
+    public static final RegistryObject<Block> CONCRETE_STONE = registerBlock("concrete_stone",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> CONCRETE_PILLAR = registerBlock("concrete_pillar",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> METEORITE = registerBlock("meteorite",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> CONCRETE_BRICKS = registerBlock("concrete_bricks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> ELEMENTAL_STONE = registerBlock("elemental_stone",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock("titanium_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> TITANIUM_BRICKS = registerBlock("titanium_bricks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> ALUMINUM_BLOCK = registerBlock("aluminum_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> ALUMINUM_BRICKS = registerBlock("aluminum_bricks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> AMBER_ORE = registerBlock("amber_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> FOSSIL_ORE = registerBlock("fossil_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
@@ -137,13 +172,13 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> DNA_SEQUENCER = registerBlock("dna_sequencer",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
+            () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> DNA_EXTRACTOR = registerBlock("dna_extractor",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
+            () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> DNA_COMBINATOR = registerBlock("dna_combinator",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
+            () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -153,7 +188,7 @@ public class ModBlocks {
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){
         ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(),
-                new Item.Properties().tab(ModCreativeModeTab.WIP_TAB)));
+                new Item.Properties().tab(ModCreativeModeTab.BLOCKS_TAB)));
     }
 
     public static void register(IEventBus eventBus){

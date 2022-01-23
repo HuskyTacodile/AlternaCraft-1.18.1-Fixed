@@ -1,9 +1,8 @@
 {
-	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "dna_combinator",
-		"particle": "dna_combinator"
+		"0": "alternacraft:block/dna_combinator",
+		"particle": "alternacraft:block/dna_combinator"
 	},
 	"elements": [
 		{

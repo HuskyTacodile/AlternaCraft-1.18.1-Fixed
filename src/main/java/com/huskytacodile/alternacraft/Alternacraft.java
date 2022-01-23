@@ -2,12 +2,15 @@ package com.huskytacodile.alternacraft;
 
 import com.huskytacodile.alternacraft.block.ModBlocks;
 import com.huskytacodile.alternacraft.client.render.entity.*;
+import com.huskytacodile.alternacraft.enchantment.ModEnchantments;
 import com.huskytacodile.alternacraft.entities.ModEntityTypes;
 import com.huskytacodile.alternacraft.item.ModItems;
 import com.huskytacodile.alternacraft.util.ModItemProperties;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
+import com.huskytacodile.alternacraft.world.biome.AlternaBiomeProvider;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -21,6 +24,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
+import terrablender.api.BiomeProviders;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Alternacraft.MOD_ID)
@@ -35,6 +39,7 @@ public class Alternacraft {
         ModBlocks.register(eventBus);
         ModEntityTypes.register(eventBus);
         ModSoundEvents.register(eventBus);
+        ModEnchantments.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::registerRenderers);
@@ -47,29 +52,41 @@ public class Alternacraft {
     @SubscribeEvent
     public void registerRenderers(final EntityRenderersEvent.RegisterRenderers event)
     {
-        event.registerEntityRenderer(ModEntityTypes.JPFEMALESPINO.get(), manager -> new JPFemaleSpinoRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.JPMALESPINO.get(), manager -> new JPMaleSpinoRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.INDOMINUS_MALE.get(), manager -> new IndominusMaleRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.INDOMINUS_FEMALE.get(), manager -> new IndominusFemaleRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.JPSPINO.get(), manager -> new JPSpinoRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.INDOMINUS.get(), manager -> new IndominusRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.INDOMINUS_ELEMENTAL.get(), manager -> new IndominusElementalRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.ACRO_FEMALE.get(), manager -> new AcroFemaleRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.ACRO_MALE.get(), manager -> new AcroMaleRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.MALESPINO.get(), manager -> new MaleSpinoRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.INDORAPTOR_MALE.get(), manager -> new IndoraptorMaleRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.INDORAPTOR_FEMALE.get(), manager -> new IndoraptorFemaleRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.INDORAPTOR_CHRISTMAS.get(), manager -> new IndoraptorChristmasRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.CERATOSUCHOPS_MALE.get(), manager -> new MaleCeratosuchopsRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.CERATOSUCHOPS_FEMALE.get(), manager -> new FemaleCeratosuchopsRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.FEMALESPINO.get(), manager -> new FemaleSpinoRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.ACRO.get(), manager -> new AcroRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.OXALAIA.get(), manager -> new OxalaiaRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.INDORAPTOR.get(), manager -> new IndoraptorRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.CERATOSUCHOPS.get(), manager -> new CeratosuchopsRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.ALTERNASAURUS.get(), manager -> new AlternasaurusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.TYLOSAURUS.get(), manager -> new TylosaurusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.MOSASAURUS.get(), manager -> new MosasaurusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.TYRANNOSAURUS.get(), manager -> new TyrannosaurusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.SCORPIUS.get(), manager -> new ScorpiusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.ALLOSAURUS.get(), manager -> new AllosaurusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.BARYONYX.get(), manager -> new BaryonyxRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.BARYONYX_GEN2.get(), manager -> new BaryonyxGen2Renderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.ALIORAMUS.get(), manager -> new AlioramusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.CARCHA.get(), manager -> new CarchaRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.YUTYRANNUS.get(), manager -> new YutyrannusRenderer(manager));
+
         ModItemProperties.makeBow(ModItems.PAINITE_BOW.get());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_SEQUENCER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_COMBINATOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_EXTRACTOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CLADOPHLEBIS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.JW_BANNER.get(),RenderType.cutout());
 
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() ->
+        {
+            // Given we only add two biomes, we should keep our weight relatively low.
+            BiomeProviders.register(new AlternaBiomeProvider(new ResourceLocation(MOD_ID, "biome_provider"), 2));
+        });
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());

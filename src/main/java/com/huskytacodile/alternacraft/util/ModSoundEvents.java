@@ -46,13 +46,66 @@ public class ModSoundEvents {
             registerSoundEvent("spinosaurus_hurt");
     public static final RegistryObject<SoundEvent> SPINOSAURUS_DEATH =
             registerSoundEvent("spinosaurus_death");
+    public static final RegistryObject<SoundEvent> T_AMBIENT =
+            registerSoundEvent("t_ambient");
+    public static final RegistryObject<SoundEvent> T_HURT =
+            registerSoundEvent("t_hurt");
+    public static final RegistryObject<SoundEvent> T_DEATH =
+            registerSoundEvent("t_death");
     public static final RegistryObject<SoundEvent> CERATOSUCHOPS_IDLE_ROAR =
             registerSoundEvent("ceratosuchops_idle_roar");
     public static final RegistryObject<SoundEvent> CERATOSUCHOPS_HURT =
             registerSoundEvent("ceratosuchops_hurt");
     public static final RegistryObject<SoundEvent> CERATOSUCHOPS_DEATH =
             registerSoundEvent("ceratosuchops_death");
-
+    public static final RegistryObject<SoundEvent> ALTERNASAURUS_IDLE =
+            registerSoundEvent("alternasaurus_idle");
+    public static final RegistryObject<SoundEvent> ALTERNASAURUS_HURT =
+            registerSoundEvent("alternasaurus_hurt");
+    public static final RegistryObject<SoundEvent> ALTERNASAURUS_DEATH =
+            registerSoundEvent("alternasaurus_death");
+    public static final RegistryObject<SoundEvent> SCORPIUS_AMBIENT =
+            registerSoundEvent("scorpius_ambient");
+    public static final RegistryObject<SoundEvent> SCORPIUS_HURT =
+            registerSoundEvent("scorpius_hurt");
+    public static final RegistryObject<SoundEvent> SCORPIUS_DEATH =
+            registerSoundEvent("scorpius_death");
+    public static final RegistryObject<SoundEvent> BARY_AMBIENT =
+            registerSoundEvent("bary_ambient");
+    public static final RegistryObject<SoundEvent> BARY_HURT =
+            registerSoundEvent("bary_hurt");
+    public static final RegistryObject<SoundEvent> BARY_DEATH =
+            registerSoundEvent("bary_death");
+    public static final RegistryObject<SoundEvent> ALLO_AMBIENT =
+            registerSoundEvent("allo_ambient");
+    public static final RegistryObject<SoundEvent> ALLO_HURT =
+            registerSoundEvent("allo_hurt");
+    public static final RegistryObject<SoundEvent> ALLO_DEATH =
+            registerSoundEvent("allo_death");
+    public static final RegistryObject<SoundEvent> TYLO_AMBIENT =
+            registerSoundEvent("tylo_ambient");
+    public static final RegistryObject<SoundEvent> TYLO_HURT =
+            registerSoundEvent("tylo_hurt");
+    public static final RegistryObject<SoundEvent> TYLO_DEATH =
+            registerSoundEvent("tylo_death");
+    public static final RegistryObject<SoundEvent> MOSA_AMBIENT =
+            registerSoundEvent("mosa_ambient");
+    public static final RegistryObject<SoundEvent> MOSA_HURT =
+            registerSoundEvent("mosa_hurt");
+    public static final RegistryObject<SoundEvent> MOSA_DEATH =
+            registerSoundEvent("mosa_death");
+    public static final RegistryObject<SoundEvent> ALIO_AMBIENT =
+            registerSoundEvent("alio_ambient");
+    public static final RegistryObject<SoundEvent> ALIO_HURT =
+            registerSoundEvent("alio_hurt");
+    public static final RegistryObject<SoundEvent> ALIO_DEATH =
+            registerSoundEvent("alio_death");
+    public static final RegistryObject<SoundEvent> CARCHA_AMBIENT =
+            registerSoundEvent("carcha_ambient");
+    public static final RegistryObject<SoundEvent> CARCHA_HURT =
+            registerSoundEvent("carcha_hurt");
+    public static final RegistryObject<SoundEvent> CARCHA_DEATH =
+            registerSoundEvent("carcha_death");
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(Alternacraft.MOD_ID, name)));
