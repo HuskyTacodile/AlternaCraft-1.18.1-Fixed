@@ -16,8 +16,14 @@ public class ModEntityTypes {
     public static DeferredRegister<EntityType<?>> ENTITY_TYPES
             = DeferredRegister.create(ForgeRegistries.ENTITIES, Alternacraft.MOD_ID);
 
+    public static final RegistryObject<EntityType<SpinoEntity>> SPINO =
+            ENTITY_TYPES.register("spino",
+                    () -> EntityType.Builder.of(SpinoEntity::new,
+                                    MobCategory.CREATURE).sized(4f, 4f)
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "spino").toString()));
+
     public static final RegistryObject<EntityType<JPSpinoEntity>> JPSPINO =
-            ENTITY_TYPES.register("jpespino",
+            ENTITY_TYPES.register("jpspino",
                     () -> EntityType.Builder.of(JPSpinoEntity::new,
                                     MobCategory.CREATURE).sized(4f, 4f)
                             .build(new ResourceLocation(Alternacraft.MOD_ID, "jpspino").toString()));
@@ -78,12 +84,6 @@ public class ModEntityTypes {
                                     MobCategory.CREATURE).sized(4f, 4f)
                             .build(new ResourceLocation(Alternacraft.MOD_ID, "indominus").toString()));
 
-    public static final RegistryObject<EntityType<IndominusElementalEntity>> INDOMINUS_ELEMENTAL =
-            ENTITY_TYPES.register("indominus_elemental",
-                    () -> EntityType.Builder.of(IndominusElementalEntity::new,
-                                    MobCategory.CREATURE).sized(4f, 4f)
-                            .build(new ResourceLocation(Alternacraft.MOD_ID, "indominus_elemental").toString()));
-
     public static final RegistryObject<EntityType<IndoraptorEntity>> INDORAPTOR =
             ENTITY_TYPES.register("indoraptor",
                     () -> EntityType.Builder.of(IndoraptorEntity::new,
@@ -125,6 +125,24 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(BaryonyxGen2Entity::new,
                                     MobCategory.CREATURE).sized(3.5f, 3.5f)
                             .build(new ResourceLocation(Alternacraft.MOD_ID, "baryonyx_gen2").toString()));
+
+    public static final RegistryObject<EntityType<CompsognathusEntity>> COMPY =
+            ENTITY_TYPES.register("compy",
+                    () -> EntityType.Builder.of(CompsognathusEntity::new,
+                                    MobCategory.CREATURE).sized(0.7f, 0.7f)
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "compy").toString()));
+
+    public static final RegistryObject<EntityType<MegaloEntity>> MEGALO =
+            ENTITY_TYPES.register("megalo",
+                    () -> EntityType.Builder.of(MegaloEntity::new,
+                                    MobCategory.CREATURE).sized(3f, 3f)
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "megalo").toString()));
+
+    public static final RegistryObject<EntityType<GigaEntity>> GIGA =
+            ENTITY_TYPES.register("giga",
+                    () -> EntityType.Builder.of(GigaEntity::new,
+                                    MobCategory.CREATURE).sized(4f, 4f)
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "giga").toString()));
 
 
     public static void register(IEventBus eventBus) {

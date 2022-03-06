@@ -71,7 +71,6 @@ public class ScorpiusEntity extends TamableAnimal implements IAnimatable, ItemSt
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||

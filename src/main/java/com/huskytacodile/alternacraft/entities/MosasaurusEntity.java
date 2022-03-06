@@ -54,7 +54,14 @@ public class MosasaurusEntity extends WaterAnimal implements IAnimatable {
     public static final Predicate<LivingEntity> PREY_SELECTOR = (p_30437_) -> {
         EntityType<?> entitytype = p_30437_.getType();
         return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT
-                || entitytype == EntityType.COW || entitytype == EntityType.CHICKEN || entitytype == EntityType.PIG ||
+                || entitytype == EntityType.COW || entitytype == EntityType.CHICKEN ||
+                entitytype == EntityType.PIG ||
+                entitytype == EntityType.COD ||
+                entitytype == EntityType.SALMON ||
+                entitytype == EntityType.TROPICAL_FISH ||
+                entitytype == EntityType.TURTLE ||
+                entitytype == EntityType.DROWNED ||
+                entitytype == EntityType.DOLPHIN ||
                 entitytype == ModEntityTypes.JPSPINO.get()||
                 entitytype == ModEntityTypes.OXALAIA.get()||
                 entitytype == ModEntityTypes.TYRANNOSAURUS.get()||
@@ -65,7 +72,6 @@ public class MosasaurusEntity extends WaterAnimal implements IAnimatable {
                 entitytype == ModEntityTypes.BARYONYX_GEN2.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||
@@ -144,14 +150,14 @@ public class MosasaurusEntity extends WaterAnimal implements IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (!(animationSpeed > -0.10F && animationSpeed < 0.05F) && !this.isAggressive()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mosa.swim", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mosasaurus.swim", true));
             return PlayState.CONTINUE;
         }
         if (this.isAggressive() && !(this.dead || this.getHealth() < 0.01 || this.isDeadOrDying())) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mosa.attack", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mosasaurus.attack", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mosa.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mosasaurus.idle", true));
 
         return PlayState.CONTINUE;
     }
@@ -159,7 +165,7 @@ public class MosasaurusEntity extends WaterAnimal implements IAnimatable {
         if (this.isEffectiveAi() && this.isInWater()) {
             this.moveRelative(0.01F, p_27490_);
             this.move(MoverType.SELF, this.getDeltaMovement());
-            this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
+            this.setDeltaMovement(this.getDeltaMovement().scale(.9D));
             if (this.getTarget() == null) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
             }
@@ -183,7 +189,7 @@ public class MosasaurusEntity extends WaterAnimal implements IAnimatable {
     public static AttributeSupplier.Builder attributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 200.00D)
-                .add(Attributes.MOVEMENT_SPEED, 0.5D)
+                .add(Attributes.MOVEMENT_SPEED, 0.65D)
                 .add(Attributes.FOLLOW_RANGE, 30.0D)
                 .add(Attributes.ATTACK_DAMAGE, 27.0D);
     }
@@ -258,7 +264,7 @@ public class MosasaurusEntity extends WaterAnimal implements IAnimatable {
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5,new RandomSwimmingGoal(this,0,2));

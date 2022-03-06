@@ -66,7 +66,6 @@ public class BaryonyxGen2Entity extends TamableAnimal implements IAnimatable, It
                 entitytype == ModEntityTypes.TYLOSAURUS.get()||
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||

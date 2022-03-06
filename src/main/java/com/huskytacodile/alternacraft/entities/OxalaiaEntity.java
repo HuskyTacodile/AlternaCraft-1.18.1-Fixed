@@ -67,7 +67,6 @@ public class OxalaiaEntity extends TamableAnimal implements IAnimatable, ItemSte
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||

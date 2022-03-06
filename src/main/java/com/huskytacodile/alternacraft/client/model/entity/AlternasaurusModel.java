@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
+import com.huskytacodile.alternacraft.client.render.entity.AlternasaurusRenderer;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
 import com.huskytacodile.alternacraft.entities.AlternasaurusEntity;
 import com.huskytacodile.alternacraft.entities.IndoraptorEntity;
@@ -20,6 +21,6 @@ public class AlternasaurusModel extends AnimatedGeoModel<AlternasaurusEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(AlternasaurusEntity entity)    {
-        return IndoraptorRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return AlternasaurusRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

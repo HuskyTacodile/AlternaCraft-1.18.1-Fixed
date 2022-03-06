@@ -2,6 +2,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
+import com.huskytacodile.alternacraft.client.render.entity.BaryonyxGen2Renderer;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
 import com.huskytacodile.alternacraft.entities.BaryonyxGen2Entity;
 import com.huskytacodile.alternacraft.entities.IndoraptorEntity;
@@ -21,6 +22,6 @@ public class BaryonyxGen2Model extends AnimatedGeoModel<BaryonyxGen2Entity> {
 
     @Override
     public ResourceLocation getTextureLocation(BaryonyxGen2Entity entity)    {
-        return IndoraptorRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return BaryonyxGen2Renderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

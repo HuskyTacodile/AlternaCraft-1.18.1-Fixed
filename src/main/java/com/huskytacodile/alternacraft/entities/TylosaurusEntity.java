@@ -51,7 +51,13 @@ public class TylosaurusEntity extends WaterAnimal implements IAnimatable {
     public static final Predicate<LivingEntity> PREY_SELECTOR = (p_30437_) -> {
         EntityType<?> entitytype = p_30437_.getType();
         return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT
-                || entitytype == EntityType.COW || entitytype == EntityType.CHICKEN || entitytype == EntityType.PIG ||
+                || entitytype == EntityType.COW || entitytype == EntityType.CHICKEN ||
+                entitytype == EntityType.PIG ||
+                entitytype == EntityType.SALMON ||
+                entitytype == EntityType.TROPICAL_FISH ||
+                entitytype == EntityType.TURTLE ||
+                entitytype == EntityType.DROWNED ||
+                entitytype == EntityType.DOLPHIN ||
                 entitytype == ModEntityTypes.JPSPINO.get()||
                 entitytype == ModEntityTypes.OXALAIA.get()||
                 entitytype == ModEntityTypes.TYRANNOSAURUS.get()||
@@ -62,7 +68,6 @@ public class TylosaurusEntity extends WaterAnimal implements IAnimatable {
                 entitytype == ModEntityTypes.BARYONYX_GEN2.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||
@@ -180,7 +185,7 @@ public class TylosaurusEntity extends WaterAnimal implements IAnimatable {
     public static AttributeSupplier.Builder attributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 180.00D)
-                .add(Attributes.MOVEMENT_SPEED, 0.6D)
+                .add(Attributes.MOVEMENT_SPEED, 0.70D)
                 .add(Attributes.FOLLOW_RANGE, 30.0D)
                 .add(Attributes.ATTACK_DAMAGE, 30.0D);
     }
@@ -255,7 +260,7 @@ public class TylosaurusEntity extends WaterAnimal implements IAnimatable {
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5,new RandomSwimmingGoal(this,0,2));

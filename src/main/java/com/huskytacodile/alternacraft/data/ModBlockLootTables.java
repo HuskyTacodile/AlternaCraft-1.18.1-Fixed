@@ -3,6 +3,7 @@ package com.huskytacodile.alternacraft.data;
 import com.huskytacodile.alternacraft.block.ModBlocks;
 import com.huskytacodile.alternacraft.item.ModItems;
 import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 

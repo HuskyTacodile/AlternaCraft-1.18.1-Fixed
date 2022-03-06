@@ -3,12 +3,17 @@ package com.huskytacodile.alternacraft.events;
 import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.entities.*;
 
+import com.huskytacodile.alternacraft.recipe.DNAExtractorRecipe;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import javax.annotation.Nonnull;
 
 @Mod.EventBusSubscriber(modid = Alternacraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
@@ -16,7 +21,6 @@ public class ModEventBusEvents {
     public static void addEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntityTypes.JPSPINO.get(), JPSpinoEntity.attributes().build());
         event.put(ModEntityTypes.INDOMINUS.get(), IndominusEntity.attributes().build());
-        event.put(ModEntityTypes.INDOMINUS_ELEMENTAL.get(), IndominusElementalEntity.attributes().build());
         event.put(ModEntityTypes.ACRO.get(), AcroEntity.attributes().build());
         event.put(ModEntityTypes.OXALAIA.get(), OxalaiaEntity.attributes().build());
         event.put(ModEntityTypes.INDORAPTOR.get(), IndoraptorEntity.attributes().build());
@@ -32,8 +36,17 @@ public class ModEventBusEvents {
         event.put(ModEntityTypes.ALIORAMUS.get(), AlioramusEntity.attributes().build());
         event.put(ModEntityTypes.CARCHA.get(), CarchaEntity.attributes().build());
         event.put(ModEntityTypes.YUTYRANNUS.get(), YutyrannusEntity.attributes().build());
+        event.put(ModEntityTypes.SPINO.get(), SpinoEntity.attributes().build());
+        event.put(ModEntityTypes.COMPY.get(), CompsognathusEntity.attributes().build());
+        event.put(ModEntityTypes.MEGALO.get(), MegaloEntity.attributes().build());
+        event.put(ModEntityTypes.GIGA.get(), GigaEntity.attributes().build());
     }
-
+    @SubscribeEvent
+    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<RecipeSerializer<?>> event) {
+        event.getRegistry().registerAll(
+                new DNAExtractorRecipe.Serializer().setRegistryName(new ResourceLocation(Alternacraft.MOD_ID, "dna_extracting"))
+        );
+    }
     @SubscribeEvent
     public static void onRegisterEntities(RegistryEvent.Register<EntityType<?>> event) {
         SpawnEggItem.eggs();

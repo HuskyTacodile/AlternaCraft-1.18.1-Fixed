@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
+import com.huskytacodile.alternacraft.client.render.entity.CarchaRenderer;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
 import com.huskytacodile.alternacraft.entities.CarchaEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -19,6 +20,6 @@ public class CarchaModel extends AnimatedGeoModel<CarchaEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(CarchaEntity entity)    {
-        return IndoraptorRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return CarchaRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

@@ -71,7 +71,6 @@ public class AcroEntity extends TamableAnimal implements IAnimatable, ItemSteera
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||
                 entitytype == ModEntityTypes.ALTERNASAURUS.get();

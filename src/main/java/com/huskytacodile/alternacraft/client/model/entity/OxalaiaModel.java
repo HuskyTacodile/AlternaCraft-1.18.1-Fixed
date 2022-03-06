@@ -2,6 +2,7 @@ package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
+import com.huskytacodile.alternacraft.client.render.entity.OxalaiaRenderer;
 import com.huskytacodile.alternacraft.entities.IndoraptorEntity;
 import com.huskytacodile.alternacraft.entities.OxalaiaEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +21,6 @@ public class OxalaiaModel extends AnimatedGeoModel<OxalaiaEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(OxalaiaEntity entity)    {
-        return IndoraptorRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return OxalaiaRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

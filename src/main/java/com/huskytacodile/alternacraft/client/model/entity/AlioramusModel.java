@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
+import com.huskytacodile.alternacraft.client.render.entity.AlioramusRenderer;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
 import com.huskytacodile.alternacraft.entities.AlioramusEntity;
 import com.huskytacodile.alternacraft.entities.CeratosuchopsEntity;
@@ -20,6 +21,6 @@ public class AlioramusModel extends AnimatedGeoModel<AlioramusEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(AlioramusEntity entity)    {
-        return IndoraptorRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return AlioramusRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

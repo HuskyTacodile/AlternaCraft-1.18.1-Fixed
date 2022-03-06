@@ -70,7 +70,6 @@ public class YutyrannusEntity extends TamableAnimal implements IAnimatable, Item
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||
@@ -90,20 +89,20 @@ public class YutyrannusEntity extends TamableAnimal implements IAnimatable, Item
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return ModSoundEvents.ALLO_AMBIENT.get();
+        return ModSoundEvents.YUTY_AMBIENT.get();
     }
 
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        return ModSoundEvents.ALLO_DEATH.get();
+        return ModSoundEvents.YUTY_DEATH.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
-        return ModSoundEvents.ALLO_HURT.get();
+        return ModSoundEvents.YUTY_HURT.get();
     }
     public boolean doHurtTarget(Entity p_70652_1_) {
         boolean flag = super.doHurtTarget(p_70652_1_);

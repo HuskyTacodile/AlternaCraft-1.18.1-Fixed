@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
+import com.huskytacodile.alternacraft.client.render.entity.AcroRenderer;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
 import com.huskytacodile.alternacraft.entities.AcroEntity;
 import com.huskytacodile.alternacraft.entities.IndoraptorEntity;
@@ -20,6 +21,6 @@ public class AcroModel extends AnimatedGeoModel<AcroEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(AcroEntity entity)    {
-        return IndoraptorRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return AcroRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

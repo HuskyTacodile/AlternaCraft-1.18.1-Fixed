@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
+import com.huskytacodile.alternacraft.client.render.entity.CeratosuchopsRenderer;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
 import com.huskytacodile.alternacraft.entities.CeratosuchopsEntity;
 import com.huskytacodile.alternacraft.entities.IndoraptorEntity;
@@ -20,6 +21,6 @@ public class CeratosuchopsModel extends AnimatedGeoModel<CeratosuchopsEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(CeratosuchopsEntity entity)    {
-        return IndoraptorRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return CeratosuchopsRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

@@ -65,14 +65,12 @@ public class AlioramusEntity extends TamableAnimal implements IAnimatable, ItemS
                 entitytype == ModEntityTypes.TYRANNOSAURUS.get()||
                 entitytype == ModEntityTypes.YUTYRANNUS.get()||
                 entitytype == ModEntityTypes.CARCHA.get()||
-                entitytype == ModEntityTypes.ALIORAMUS.get()||
                 entitytype == ModEntityTypes.BARYONYX.get()||
                 entitytype == ModEntityTypes.BARYONYX_GEN2.get()||
                 entitytype == ModEntityTypes.TYLOSAURUS.get()||
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||

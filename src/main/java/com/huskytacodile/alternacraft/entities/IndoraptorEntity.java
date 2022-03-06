@@ -71,7 +71,6 @@ public class IndoraptorEntity extends TamableAnimal implements IAnimatable, Item
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||

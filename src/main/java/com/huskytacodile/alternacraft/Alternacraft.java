@@ -6,15 +6,14 @@ import com.huskytacodile.alternacraft.client.render.entity.*;
 import com.huskytacodile.alternacraft.enchantment.ModEnchantments;
 import com.huskytacodile.alternacraft.entities.ModEntityTypes;
 import com.huskytacodile.alternacraft.item.ModItems;
+import com.huskytacodile.alternacraft.recipe.ModRecipes;
 import com.huskytacodile.alternacraft.screen.DNAExtractorScreen;
 import com.huskytacodile.alternacraft.screen.ModMenuTypes;
 import com.huskytacodile.alternacraft.util.ModItemProperties;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
-import com.huskytacodile.alternacraft.world.biome.AlternaBiomeProvider;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -28,7 +27,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
-import terrablender.api.BiomeProviders;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Alternacraft.MOD_ID)
@@ -46,6 +44,7 @@ public class Alternacraft {
         ModEnchantments.register(eventBus);
         ModBlockEntities.register(eventBus);
         ModMenuTypes.register(eventBus);
+        ModRecipes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::registerRenderers);
@@ -60,7 +59,6 @@ public class Alternacraft {
     {
         event.registerEntityRenderer(ModEntityTypes.JPSPINO.get(), manager -> new JPSpinoRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.INDOMINUS.get(), manager -> new IndominusRenderer(manager));
-        event.registerEntityRenderer(ModEntityTypes.INDOMINUS_ELEMENTAL.get(), manager -> new IndominusElementalRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.ACRO.get(), manager -> new AcroRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.OXALAIA.get(), manager -> new OxalaiaRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.INDORAPTOR.get(), manager -> new IndoraptorRenderer(manager));
@@ -76,6 +74,10 @@ public class Alternacraft {
         event.registerEntityRenderer(ModEntityTypes.ALIORAMUS.get(), manager -> new AlioramusRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.CARCHA.get(), manager -> new CarchaRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.YUTYRANNUS.get(), manager -> new YutyrannusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.SPINO.get(), manager -> new SpinoRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.COMPY.get(), manager -> new CompsognathusRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.MEGALO.get(), manager -> new MegaloRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.GIGA.get(), manager -> new GigaRenderer(manager));
 
         ModItemProperties.makeBow(ModItems.PAINITE_BOW.get());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_SEQUENCER.get(), RenderType.cutout());
@@ -90,11 +92,6 @@ public class Alternacraft {
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        event.enqueueWork(() ->
-        {
-            // Given we only add two biomes, we should keep our weight relatively low.
-            BiomeProviders.register(new AlternaBiomeProvider(new ResourceLocation(MOD_ID, "biome_provider"), 2));
-        });
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());

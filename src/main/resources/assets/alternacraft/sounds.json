@@ -316,5 +316,47 @@
     "sounds": [
       "alternacraft:carcha_hurt"
     ]
+  },
+  "rspino_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.rspino_death",
+    "sounds": [
+      "alternacraft:rspino_death"
+    ]
+  },
+  "rspino_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.rspino_ambient",
+    "sounds": [
+      "alternacraft:rspino_ambient"
+    ]
+  },
+  "rspino_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.rspino_hurt",
+    "sounds": [
+      "alternacraft:rspino_hurt"
+    ]
+  },
+  "yuty_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.yuty_death",
+    "sounds": [
+      "alternacraft:yuty_death"
+    ]
+  },
+  "yuty_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.yuty_ambient",
+    "sounds": [
+      "alternacraft:yuty_ambient"
+    ]
+  },
+  "yuty_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.yuty_hurt",
+    "sounds": [
+      "alternacraft:yuty_hurt"
+    ]
   }
 }

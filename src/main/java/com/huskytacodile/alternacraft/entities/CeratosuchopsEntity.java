@@ -68,7 +68,6 @@ public class CeratosuchopsEntity extends TamableAnimal implements IAnimatable, I
                 entitytype == ModEntityTypes.TYLOSAURUS.get()||
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
-                entitytype == ModEntityTypes.INDOMINUS_ELEMENTAL.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||

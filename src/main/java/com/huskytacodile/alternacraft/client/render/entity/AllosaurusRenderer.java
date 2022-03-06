@@ -5,6 +5,7 @@ import com.huskytacodile.alternacraft.client.model.entity.AllosaurusModel;
 import com.huskytacodile.alternacraft.entities.AllosaurusEntity;
 import com.huskytacodile.alternacraft.entities.JPSpinoEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
+import com.huskytacodile.alternacraft.entities.variant.MultiVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.Util;
@@ -21,12 +22,13 @@ public class AllosaurusRenderer extends GeoEntityRenderer<AllosaurusEntity>
 {
     public AllosaurusRenderer(EntityRendererProvider.Context entityRendererProvider) {
         super(entityRendererProvider, new AllosaurusModel());
-        this.shadowRadius = 4.0F;
+        this.shadowRadius = 3.85F;
     }
-    public static final Map<GenderVariant, ResourceLocation> LOCATION_BY_VARIANT =
-            Util.make(Maps.newEnumMap(GenderVariant.class), (p_114874_) -> {
-                p_114874_.put(GenderVariant.MALE, new ResourceLocation("alternacraft:textures/entity/allosaurus_male.png"));
-                p_114874_.put(GenderVariant.FEMALE, new ResourceLocation("alternacraft:textures/entity/allosaurus_female.png"));
+    public static final Map<MultiVariant, ResourceLocation> LOCATION_BY_VARIANT =
+            Util.make(Maps.newEnumMap(MultiVariant.class), (p_114874_) -> {
+                p_114874_.put(MultiVariant.MALE, new ResourceLocation("alternacraft:textures/entity/allosaurus_male.png"));
+                p_114874_.put(MultiVariant.FEMALE, new ResourceLocation("alternacraft:textures/entity/allosaurus_female.png"));
+                p_114874_.put(MultiVariant.FEMALE2, new ResourceLocation("alternacraft:textures/entity/allosaurus_female2.png"));
             });
     @Override
     public ResourceLocation getTextureLocation(AllosaurusEntity entity) {

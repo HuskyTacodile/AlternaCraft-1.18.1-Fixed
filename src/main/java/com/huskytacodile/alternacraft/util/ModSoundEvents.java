@@ -106,6 +106,18 @@ public class ModSoundEvents {
             registerSoundEvent("carcha_hurt");
     public static final RegistryObject<SoundEvent> CARCHA_DEATH =
             registerSoundEvent("carcha_death");
+    public static final RegistryObject<SoundEvent> RSPINO_AMBIENT =
+            registerSoundEvent("rspino_ambient");
+    public static final RegistryObject<SoundEvent> RSPINO_HURT =
+            registerSoundEvent("rspino_hurt");
+    public static final RegistryObject<SoundEvent> RSPINO_DEATH =
+            registerSoundEvent("rspino_death");
+    public static final RegistryObject<SoundEvent> YUTY_AMBIENT =
+            registerSoundEvent("yuty_ambient");
+    public static final RegistryObject<SoundEvent> YUTY_HURT =
+            registerSoundEvent("yuty_hurt");
+    public static final RegistryObject<SoundEvent> YUTY_DEATH =
+            registerSoundEvent("yuty_death");
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(Alternacraft.MOD_ID, name)));

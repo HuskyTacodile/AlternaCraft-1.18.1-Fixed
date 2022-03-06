@@ -1,6 +1,6 @@
 package com.huskytacodile.alternacraft.entities;
 
-import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
+import com.huskytacodile.alternacraft.entities.variant.QuintiVariant;
 import com.huskytacodile.alternacraft.item.ModItems;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
 import net.minecraft.Util;
@@ -99,11 +99,11 @@ public class IndominusEntity extends TamableAnimal implements IAnimatable, ItemS
     }
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_, MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_, @Nullable CompoundTag p_146750_) {
-        GenderVariant variant = Util.getRandom(GenderVariant.values(), this.random);
+        QuintiVariant variant = Util.getRandom(QuintiVariant.values(), this.random);
         setVariant(variant);
         return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
     }
-    private void setVariant(GenderVariant variant) {
+    private void setVariant(QuintiVariant variant) {
         this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
     @Override
@@ -117,8 +117,8 @@ public class IndominusEntity extends TamableAnimal implements IAnimatable, ItemS
         super.readAdditionalSaveData(p_21815_);
         this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
     }
-    public GenderVariant getVariant() {
-        return GenderVariant.byId(this.getTypeVariant() & 255);
+    public QuintiVariant getVariant() {
+        return QuintiVariant.byId(this.getTypeVariant() & 255);
     }
 
     private int getTypeVariant() {
@@ -155,19 +155,19 @@ public class IndominusEntity extends TamableAnimal implements IAnimatable, ItemS
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (!(animationSpeed > -0.10F && animationSpeed < 0.05F) && !this.isAggressive() && event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.indom.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.indo.walk", true));
             return PlayState.CONTINUE;
         }
         if (this.isAggressive() && !(this.dead || this.getHealth() < 0.01 || this.isDeadOrDying())) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.indom.attack", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.indo.attack", true));
             return PlayState.CONTINUE;
         }
         if (this.isSitting()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.indom.sit", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.indo.sit", true));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.indom.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.indo.idle", true));
 
         return PlayState.CONTINUE;
     }

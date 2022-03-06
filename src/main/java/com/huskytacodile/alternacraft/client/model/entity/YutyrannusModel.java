@@ -2,6 +2,7 @@ package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
+import com.huskytacodile.alternacraft.client.render.entity.YutyrannusRenderer;
 import com.huskytacodile.alternacraft.entities.YutyrannusEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
@@ -19,6 +20,6 @@ public class YutyrannusModel extends AnimatedGeoModel<YutyrannusEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(YutyrannusEntity entity)    {
-        return IndoraptorRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return YutyrannusRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }
