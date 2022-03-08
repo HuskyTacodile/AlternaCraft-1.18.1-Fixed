@@ -32,6 +32,14 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.SPINO, 0xD3D751, 0xB12626,
                     new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
 
+    public static final RegistryObject<ForgeSpawnEggItem> BLUE_SPAWN_EGG = ITEMS.register("blue_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.BLUE, 0xA9A9A9,0x008DAF ,
+                    new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
+
+    public static final RegistryObject<ForgeSpawnEggItem> BETA_SPAWN_EGG = ITEMS.register("beta_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.BETA, 0xA9A9A9, 0x008DAF,
+                    new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
+
     public static final RegistryObject<ForgeSpawnEggItem> TYLOSAURUS_SPAWN_EGG = ITEMS.register("tylosaurus_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.TYLOSAURUS, 0xF4F4F4, 0x131929,
                     new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
@@ -119,9 +127,6 @@ public class ModItems {
             ()-> new Item(new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
 
     public static final RegistryObject<Item> BIOLUMINESCENCE = ITEMS.register("bioluminescence",
-            ()-> new Item(new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
-
-    public static final RegistryObject<Item> ALTERNA_RADIATOR = ITEMS.register("alterna_radiator",
             ()-> new Item(new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
 
     public static final RegistryObject<Item> TITANIUM_INGOT = ITEMS.register("titanium_ingot",

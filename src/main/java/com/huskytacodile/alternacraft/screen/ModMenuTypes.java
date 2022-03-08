@@ -15,9 +15,6 @@ public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(ForgeRegistries.CONTAINERS, Alternacraft.MOD_ID);
 
-    public static final RegistryObject<MenuType<DNAExtractorMenu>> DNA_EXTRACTOR_MENU =
-            registerMenuType(DNAExtractorMenu::new, "dna_extractor_menu");
-
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {

@@ -144,6 +144,18 @@ public class ModEntityTypes {
                                     MobCategory.CREATURE).sized(4f, 4f)
                             .build(new ResourceLocation(Alternacraft.MOD_ID, "giga").toString()));
 
+    public static final RegistryObject<EntityType<BlueEntity>> BLUE =
+            ENTITY_TYPES.register("blue",
+                    () -> EntityType.Builder.of(BlueEntity::new,
+                                    MobCategory.CREATURE).sized(2f, 2f)
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "blue").toString()));
+
+    public static final RegistryObject<EntityType<BetaEntity>> BETA =
+            ENTITY_TYPES.register("beta",
+                    () -> EntityType.Builder.of(BetaEntity::new,
+                                    MobCategory.CREATURE).sized(1.2f, 1.2f)
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "beta").toString()));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

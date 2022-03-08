@@ -3,7 +3,6 @@ package com.huskytacodile.alternacraft.events;
 import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.entities.*;
 
-import com.huskytacodile.alternacraft.recipe.DNAExtractorRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.SpawnEggItem;
@@ -40,12 +39,8 @@ public class ModEventBusEvents {
         event.put(ModEntityTypes.COMPY.get(), CompsognathusEntity.attributes().build());
         event.put(ModEntityTypes.MEGALO.get(), MegaloEntity.attributes().build());
         event.put(ModEntityTypes.GIGA.get(), GigaEntity.attributes().build());
-    }
-    @SubscribeEvent
-    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<RecipeSerializer<?>> event) {
-        event.getRegistry().registerAll(
-                new DNAExtractorRecipe.Serializer().setRegistryName(new ResourceLocation(Alternacraft.MOD_ID, "dna_extracting"))
-        );
+        event.put(ModEntityTypes.BLUE.get(), BlueEntity.attributes().build());
+        event.put(ModEntityTypes.BETA.get(), BetaEntity.attributes().build());
     }
     @SubscribeEvent
     public static void onRegisterEntities(RegistryEvent.Register<EntityType<?>> event) {

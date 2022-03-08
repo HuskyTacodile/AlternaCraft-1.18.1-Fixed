@@ -6,11 +6,10 @@ import com.huskytacodile.alternacraft.client.render.entity.*;
 import com.huskytacodile.alternacraft.enchantment.ModEnchantments;
 import com.huskytacodile.alternacraft.entities.ModEntityTypes;
 import com.huskytacodile.alternacraft.item.ModItems;
-import com.huskytacodile.alternacraft.recipe.ModRecipes;
-import com.huskytacodile.alternacraft.screen.DNAExtractorScreen;
 import com.huskytacodile.alternacraft.screen.ModMenuTypes;
 import com.huskytacodile.alternacraft.util.ModItemProperties;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
+import com.huskytacodile.alternacraft.world.dimension.ModDimensions;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -44,8 +43,7 @@ public class Alternacraft {
         ModEnchantments.register(eventBus);
         ModBlockEntities.register(eventBus);
         ModMenuTypes.register(eventBus);
-        ModRecipes.register(eventBus);
-
+        ModDimensions.register(eventBus);
         eventBus.addListener(this::setup);
         eventBus.addListener(this::registerRenderers);
         // Register ourselves for server and other game events we are interested in
@@ -78,6 +76,8 @@ public class Alternacraft {
         event.registerEntityRenderer(ModEntityTypes.COMPY.get(), manager -> new CompsognathusRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.MEGALO.get(), manager -> new MegaloRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.GIGA.get(), manager -> new GigaRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.BLUE.get(), manager -> new BlueRenderer(manager));
+        event.registerEntityRenderer(ModEntityTypes.BETA.get(), manager -> new BetaRenderer(manager));
 
         ModItemProperties.makeBow(ModItems.PAINITE_BOW.get());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_SEQUENCER.get(), RenderType.cutout());
@@ -85,8 +85,6 @@ public class Alternacraft {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_EXTRACTOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CLADOPHLEBIS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.JW_BANNER.get(),RenderType.cutout());
-
-        MenuScreens.register(ModMenuTypes.DNA_EXTRACTOR_MENU.get(), DNAExtractorScreen::new);
 
     }
 

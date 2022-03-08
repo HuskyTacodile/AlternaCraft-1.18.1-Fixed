@@ -12,11 +12,6 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Alternacraft.MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<DNAExtractorBlockEntity>> DNA_EXTRACTOR =
-            BLOCK_ENTITIES.register("dna_extractor", () ->
-                    BlockEntityType.Builder.of(DNAExtractorBlockEntity::new,
-                            ModBlocks.DNA_EXTRACTOR.get()).build(null));
-
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
