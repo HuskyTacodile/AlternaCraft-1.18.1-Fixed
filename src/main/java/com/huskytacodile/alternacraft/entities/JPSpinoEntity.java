@@ -72,6 +72,7 @@ public class JPSpinoEntity extends TamableAnimal implements IAnimatable, ItemSte
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||
                 entitytype == ModEntityTypes.ALTERNASAURUS.get();
     };
@@ -83,7 +84,6 @@ public class JPSpinoEntity extends TamableAnimal implements IAnimatable, ItemSte
         Item item = p_70877_1_.getItem();
         return item.isEdible() && item.getFoodProperties().isMeat();
     }
-
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_, MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_, @Nullable CompoundTag p_146750_) {
@@ -146,7 +146,7 @@ public class JPSpinoEntity extends TamableAnimal implements IAnimatable, ItemSte
 
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (!(animationSpeed > -0.10F && animationSpeed < 0.05F) && !this.isAggressive()) {
+        if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.jpspinosaurus.walk", true));
             return PlayState.CONTINUE;
         }
@@ -308,18 +308,19 @@ public class JPSpinoEntity extends TamableAnimal implements IAnimatable, ItemSte
         super.registerGoals();
         this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false));
-        this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, false));
+        this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(Items.NETHERITE_SWORD), false));
-        this.goalSelector.addGoal(0,new RandomSwimmingGoal(this,0,1));
+        this.goalSelector.addGoal(2,new RandomSwimmingGoal(this,0,1));
         this.goalSelector.addGoal(2, new FloatGoal(this));
         this.targetSelector.addGoal(5, new NonTameRandomTargetGoal<>(this, Animal.class, false, PREY_SELECTOR));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
     }
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
-        return null;
+    public JPSpinoEntity getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
+        return ModEntityTypes.JPSPINO.get().create(serverLevel);
     }
 }

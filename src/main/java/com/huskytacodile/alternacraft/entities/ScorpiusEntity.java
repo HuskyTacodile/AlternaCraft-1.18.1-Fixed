@@ -1,6 +1,6 @@
 package com.huskytacodile.alternacraft.entities;
 
-import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
+import com.huskytacodile.alternacraft.entities.variant.QuadVariant;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -62,6 +62,7 @@ public class ScorpiusEntity extends TamableAnimal implements IAnimatable, ItemSt
                 entitytype == ModEntityTypes.JPSPINO.get()||
                 entitytype == ModEntityTypes.OXALAIA.get()||
                 entitytype == ModEntityTypes.TYRANNOSAURUS.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.YUTYRANNUS.get()||
                 entitytype == ModEntityTypes.CARCHA.get()||
                 entitytype == ModEntityTypes.ALIORAMUS.get()||
@@ -92,11 +93,11 @@ public class ScorpiusEntity extends TamableAnimal implements IAnimatable, ItemSt
     }
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_, MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_, @Nullable CompoundTag p_146750_) {
-        GenderVariant variant = Util.getRandom(GenderVariant.values(), this.random);
+        QuadVariant variant = Util.getRandom(QuadVariant.values(), this.random);
         setVariant(variant);
         return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
     }
-    private void setVariant(GenderVariant variant) {
+    private void setVariant(QuadVariant variant) {
         this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
     @Override
@@ -110,8 +111,8 @@ public class ScorpiusEntity extends TamableAnimal implements IAnimatable, ItemSt
         super.readAdditionalSaveData(p_21815_);
         this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
     }
-    public GenderVariant getVariant() {
-        return GenderVariant.byId(this.getTypeVariant() & 255);
+    public QuadVariant getVariant() {
+        return QuadVariant.byId(this.getTypeVariant() & 255);
     }
 
     private int getTypeVariant() {

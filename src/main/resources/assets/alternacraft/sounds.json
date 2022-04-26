@@ -358,5 +358,76 @@
     "sounds": [
       "alternacraft:yuty_hurt"
     ]
+  },
+  "giga_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.giga_death",
+    "sounds": [
+        "alternacraft:giga_death"
+    ]
+  },
+  "giga_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.giga_ambient",
+    "sounds": [
+      "alternacraft:giga_ambient"
+    ]
+  },
+  "giga_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.giga_hurt",
+    "sounds": [
+      "alternacraft:giga_hurt"
+    ]
+  },
+  "compy_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.compy_death",
+    "sounds": [
+        "alternacraft:compy_death"
+    ]
+  },
+  "compy_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.compy_ambient",
+    "sounds": [
+      "alternacraft:compy_ambient",
+      "alternacraft:compy_ambient2"
+    ]
+  },
+  "compy_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.compy_hurt",
+    "sounds": [
+      "alternacraft:compy_hurt"
+    ]
+  },
+  "blue_death": {
+    "category": "entities",
+    "subtitle": "alternacraft.blue_death",
+    "sounds": [
+        "alternacraft:blue_death"
+    ]
+  },
+  "blue_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.blue_ambient",
+    "sounds": [
+      "alternacraft:blue_ambient"
+    ]
+  },
+  "blue_hurt": {
+    "category": "entities",
+    "subtitle": "alternacraft.blue_hurt",
+    "sounds": [
+      "alternacraft:blue_hurt"
+    ]
+  },
+  "beta_ambient": {
+    "category": "entities",
+    "subtitle": "alternacraft.beta_ambient",
+    "sounds": [
+      "alternacraft:beta_ambient"
+    ]
   }
 }

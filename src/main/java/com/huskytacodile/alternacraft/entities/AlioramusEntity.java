@@ -49,7 +49,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import java.util.function.Predicate;
 
 
-public class AlioramusEntity extends TamableAnimal implements IAnimatable, ItemSteerable {
+public class AlioramusEntity extends TamableAnimal implements IAnimatable, PlayerRideable {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(AlioramusEntity.class, EntityDataSerializers.INT);
     private AnimationFactory factory = new AnimationFactory(this);
@@ -75,10 +75,12 @@ public class AlioramusEntity extends TamableAnimal implements IAnimatable, ItemS
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.ALTERNASAURUS.get();
     };
     protected AlioramusEntity(EntityType<? extends TamableAnimal> p_i48575_1_, Level p_i48575_2_) {
         super(p_i48575_1_, p_i48575_2_);
+        this.maxUpStep = 1.0F;
         this.setTame(false);
     }
     public boolean isFood(ItemStack p_70877_1_) {
@@ -226,34 +228,7 @@ public class AlioramusEntity extends TamableAnimal implements IAnimatable, ItemS
     public boolean canBreatheUnderwater() {
         return true;
     }
-    public Vec3 getDismountLocationForPassenger(LivingEntity p_230268_1_) {
-        Direction direction = this.getMotionDirection();
-        if (direction.getAxis() == Direction.Axis.Y) {
-            return super.getDismountLocationForPassenger(p_230268_1_);
-        } else {
-            int[][] aint = DismountHelper.offsetsForDirection(direction);
-            BlockPos blockpos = this.blockPosition();
-            BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
 
-            for(Pose pose : p_230268_1_.getDismountPoses()) {
-                AABB axisalignedbb = p_230268_1_.getLocalBoundsForPose(pose);
-
-                for(int[] aint1 : aint) {
-                    blockpos$mutable.set(blockpos.getX() + aint1[0], blockpos.getY(), blockpos.getZ() + aint1[1]);
-                    double d0 = this.level.getBlockFloorHeight(blockpos$mutable);
-                    if (DismountHelper.isBlockFloorValid(d0)) {
-                        Vec3 vec3 = Vec3.upFromBottomCenterOf(blockpos$mutable, d0);
-                        if (DismountHelper.canDismountTo(this.level, p_230268_1_, axisalignedbb.move(vec3))) {
-                            p_230268_1_.setPose(pose);
-                            return vec3;
-                        }
-                    }
-                }
-            }
-
-            return super.getDismountLocationForPassenger(p_230268_1_);
-        }
-    }
     protected SoundEvent getSwimSound() {
         return SoundEvents.FISH_SWIM;
     }
@@ -261,9 +236,9 @@ public class AlioramusEntity extends TamableAnimal implements IAnimatable, ItemS
     protected void playStepSound(BlockPos p_180429_1_, BlockState p_180429_2_) {
     }
 
-    @javax.annotation.Nullable
+    @Nullable
     public Entity getControllingPassenger() {
-        return this.getPassengers().isEmpty() ? null : this.getPassengers().get(0);
+        return this.getFirstPassenger();
     }
 
     public boolean canBeControlledByRider() {
@@ -275,27 +250,70 @@ public class AlioramusEntity extends TamableAnimal implements IAnimatable, ItemS
             return playerentity.getMainHandItem().getItem() == Items.NETHERITE_SWORD || playerentity.getOffhandItem().getItem() == Items.NETHERITE_SWORD;
         }
     }
-    public void travel(Vec3 p_213352_1_) {
-        this.travel(this, this.steering, p_213352_1_);
-    }
 
     public float getSteeringSpeed() {
         return (float)this.getAttributeValue(Attributes.MOVEMENT_SPEED) * 0.75F;
     }
 
-    @Override
-    public boolean travel(Mob p_233622_1_, ItemBasedSteering p_233622_2_, Vec3 p_233622_3_) {
-        return ItemSteerable.super.travel(p_233622_1_, p_233622_2_, p_233622_3_);
+    public void travel(Vec3 pTravelVector) {
+        if (this.isAlive()) {
+            if (this.isVehicle() && this.canBeControlledByRider()) {
+                LivingEntity livingentity = (LivingEntity)this.getControllingPassenger();
+                this.setYRot(livingentity.getYRot());
+                this.yRotO = this.getYRot();
+                this.setXRot(livingentity.getXRot() * 0.5F);
+                this.setRot(this.getYRot(), this.getXRot());
+                this.yBodyRot = this.getYRot();
+                this.yHeadRot = this.yBodyRot;
+                float f = livingentity.xxa * 0.5F;
+                float f1 = livingentity.zza;
+                if (f1 <= 0.0F) {
+                    f1 *= 0.25F;
+                }
+
+                if (this.isControlledByLocalInstance()) {
+                    this.setSpeed((float)this.getAttributeValue(Attributes.MOVEMENT_SPEED));
+                    super.travel(new Vec3((double)f, pTravelVector.y, (double)f1));
+                } else if (livingentity instanceof Player) {
+                    this.setDeltaMovement(Vec3.ZERO);
+                }
+
+                this.calculateEntityAnimation(this, false);
+                this.tryCheckInsideBlocks();
+            } else {
+                super.travel(pTravelVector);
+            }
+        }
     }
 
     @Override
-    public boolean boost() {
-        return false;
-    }
+    public Vec3 getDismountLocationForPassenger(LivingEntity pLivingEntity) {
+        Direction direction = this.getMotionDirection();
+        if (direction.getAxis() == Direction.Axis.Y) {
+            return super.getDismountLocationForPassenger(pLivingEntity);
+        } else {
+            int[][] aint = DismountHelper.offsetsForDirection(direction);
+            BlockPos blockpos = this.blockPosition();
+            BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
 
-    public void travelWithInput(Vec3 p_230267_1_) {
-        super.travel(p_230267_1_);
+            for(Pose pose : pLivingEntity.getDismountPoses()) {
+                AABB axisalignedbb = pLivingEntity.getLocalBoundsForPose(pose);
 
+                for(int[] aint1 : aint) {
+                    blockpos$mutable.set(blockpos.getX() + aint1[0], blockpos.getY(), blockpos.getZ() + aint1[1]);
+                    double d0 = this.level.getBlockFloorHeight(blockpos$mutable);
+                    if (DismountHelper.isBlockFloorValid(d0)) {
+                        Vec3 vec3 = Vec3.upFromBottomCenterOf(blockpos$mutable, d0);
+                        if (DismountHelper.canDismountTo(this.level, pLivingEntity, axisalignedbb.move(vec3))) {
+                            pLivingEntity.setPose(pose);
+                            return vec3;
+                        }
+                    }
+                }
+            }
+
+            return super.getDismountLocationForPassenger(pLivingEntity);
+        }
     }
 
     @Override

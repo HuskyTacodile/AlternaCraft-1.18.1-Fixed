@@ -102,20 +102,20 @@ public class CompsognathusEntity extends TamableAnimal implements IAnimatable {
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return ModSoundEvents.CARCHA_AMBIENT.get();
+        return ModSoundEvents.COMPY_AMBIENT.get();
     }
 
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        return ModSoundEvents.CARCHA_DEATH.get();
+        return ModSoundEvents.COMPY_DEATH.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
-        return ModSoundEvents.CARCHA_HURT.get();
+        return ModSoundEvents.COMPY_HURT.get();
     }
     public boolean doHurtTarget(Entity p_70652_1_) {
         boolean flag = super.doHurtTarget(p_70652_1_);

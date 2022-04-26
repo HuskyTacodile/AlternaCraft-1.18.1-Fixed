@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.entities;
 
-import com.huskytacodile.alternacraft.entities.variant.MultiVariant;
+import com.huskytacodile.alternacraft.entities.variant.QuadVariant;
+import com.huskytacodile.alternacraft.entities.variant.QuadVariant;
 import com.huskytacodile.alternacraft.item.ModItems;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
 import net.minecraft.Util;
@@ -119,11 +120,11 @@ public class AllosaurusEntity extends TamableAnimal implements IAnimatable, Item
     }
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_, MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_, @Nullable CompoundTag p_146750_) {
-        MultiVariant variant = Util.getRandom(MultiVariant.values(), this.random);
+        QuadVariant variant = Util.getRandom(QuadVariant.values(), this.random);
         setVariant(variant);
         return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
     }
-    private void setVariant(MultiVariant variant) {
+    private void setVariant(QuadVariant variant) {
         this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
     @Override
@@ -137,8 +138,8 @@ public class AllosaurusEntity extends TamableAnimal implements IAnimatable, Item
         super.readAdditionalSaveData(p_21815_);
         this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
     }
-    public MultiVariant getVariant() {
-        return MultiVariant.byId(this.getTypeVariant() & 255);
+    public QuadVariant getVariant() {
+        return QuadVariant.byId(this.getTypeVariant() & 255);
     }
 
     private int getTypeVariant() {

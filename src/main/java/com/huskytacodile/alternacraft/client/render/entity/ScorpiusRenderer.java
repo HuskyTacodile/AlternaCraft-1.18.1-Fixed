@@ -6,6 +6,7 @@ import com.huskytacodile.alternacraft.client.model.entity.ScorpiusModel;
 import com.huskytacodile.alternacraft.entities.AllosaurusEntity;
 import com.huskytacodile.alternacraft.entities.ScorpiusEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
+import com.huskytacodile.alternacraft.entities.variant.QuadVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.Util;
@@ -24,10 +25,12 @@ public class ScorpiusRenderer extends GeoEntityRenderer<ScorpiusEntity>
         super(entityRendererProvider, new ScorpiusModel());
         this.shadowRadius = 4.0F;
     }
-    public static final Map<GenderVariant, ResourceLocation> LOCATION_BY_VARIANT =
-            Util.make(Maps.newEnumMap(GenderVariant.class), (p_114874_) -> {
-                p_114874_.put(GenderVariant.MALE, new ResourceLocation("alternacraft:textures/entity/scorpius_male.png"));
-                p_114874_.put(GenderVariant.FEMALE, new ResourceLocation("alternacraft:textures/entity/scorpius_female.png"));
+    public static final Map<QuadVariant, ResourceLocation> LOCATION_BY_VARIANT =
+            Util.make(Maps.newEnumMap(QuadVariant.class), (p_114874_) -> {
+                p_114874_.put(QuadVariant.MALE, new ResourceLocation("alternacraft:textures/entity/scorpius_male.png"));
+                p_114874_.put(QuadVariant.FEMALE, new ResourceLocation("alternacraft:textures/entity/scorpius_female.png"));
+                p_114874_.put(QuadVariant.FEMALE2, new ResourceLocation("alternacraft:textures/entity/alpha_scorpius.png"));
+                p_114874_.put(QuadVariant.MALE2, new ResourceLocation("alternacraft:textures/entity/scorpius_gen_3.png"));
             });
     @Override
     public ResourceLocation getTextureLocation(ScorpiusEntity entity) {

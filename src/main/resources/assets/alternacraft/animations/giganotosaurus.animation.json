@@ -665,6 +665,25 @@
 							
 						}
 					}
+				},
+				"Head": {
+					"rotation": {
+						"vector": [-2.5, 0, 0]
+					}
+				},
+				"bottomjaw": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [35, 0, 0],
+							"easing": "linear"
+						},
+						"0.375": {
+							"vector": [0, 0, 0]
+						}
+					}
 				}
 			}
 		},

@@ -17,8 +17,15 @@
   "item.alternacraft.spino_gen2_spawn_egg": "Spinosaurus Gen 2 Spawn Egg",
   "item.alternacraft.oxalaia_spawn_egg": "Oxalaia (S. quilombensis) Spawn Egg",
   "item.alternacraft.scorpius_spawn_egg": "Scorpios Rex Spawn Egg",
-  "item.alternacraft.tylosaurus_spawn_egg": "Tylosaurus (WIP) Spawn Egg",
-  "item.alternacraft.mosasaurus_spawn_egg": "Mosasaurus (WIP) Spawn Egg",
+  "item.alternacraft.beta_spawn_egg": "Beta Spawn Egg",
+  "item.alternacraft.blue_spawn_egg": "Blue Spawn Egg",
+  "item.alternacraft.giga_spawn_egg": "Giganotosaurus Spawn Egg",
+  "item.alternacraft.simplified_spino_spawn_egg": "(Simplified) Spinosaurus Spawn Egg",
+  "item.alternacraft.malusaurus_spawn_egg": "Malusaurus Spawn Egg",
+  "item.alternacraft.megalo_spawn_egg": "Megalosaurus Spawn Egg",
+  "item.alternacraft.compy_spawn_egg": "Compsognathus Spawn Egg",
+  "item.alternacraft.tylosaurus_spawn_egg": "Tylosaurus Spawn Egg",
+  "item.alternacraft.mosasaurus_spawn_egg": "Mosasaurus Spawn Egg",
   "item.alternacraft.alternasaurus_spawn_egg": "Alternasaurus Spawn Egg",
   "item.alternacraft.tyrannosaurus_spawn_egg": "Tyrannosaurus Spawn Egg",
   "item.alternacraft.allosaurus_spawn_egg": "Allosaurus Spawn Egg",
@@ -29,7 +36,6 @@
   "item.alternacraft.carcha_spawn_egg": "Carcharodontosaurus Spawn Egg",
   "item.alternacraft.titanium_ingot": "Titanium Ingot",
   "item.alternacraft.amber": "Amber",
-  "item.alternacraft.alterna_radiator": "Alterna Radiator",
   "item.alternacraft.malachite": "Malachite",
   "item.alternacraft.mosquito_in_amber": "Mosquito In Amber",
   "item.alternacraft.among_us_red": "Red Among Us Character",
@@ -48,6 +54,7 @@
   "block.alternacraft.titanium_ore": "Titanium Ore",
   "block.alternacraft.fossil_ore": "Fossil Ore",
   "block.alternacraft.amber_ore": "Amber Ore",
+  "block.alternacraft.alterna_radiator": "Alterna Radiator (WIP)",
   "block.alternacraft.mudstone_titanium_ore": "Mudstone Titanium Ore",
   "block.alternacraft.mudstone_painite_ore": "Mudstone Painite Ore",
   "block.alternacraft.mudstone_diamond_ore": "Mudstone Diamond Ore",
@@ -98,5 +105,13 @@
   "block.alternacraft.elemental_stone": "Elemental Stone",
   "block.alternacraft.cladophlebis": "Cladophlebis",
   "enchantment.alternacraft.striking": "Striking",
-  "enchantment.alternacraft.explosion": "Exploding"
+  "enchantment.alternacraft.explosion": "Exploding",
+
+  "entity.minecraft.villager.alternacraft.husky": "DNA Combinationist",
+  "entity.minecraft.villager.alternacraft.kaupen": "DNA Extractionist",
+  "entity.minecraft.villager.alternacraft.cylixr": "DNA Sequencer Specialist",
+
+  "entity.minecraft.villager.husky": "DNA Combinationist",
+  "entity.minecraft.villager.kaupen": "DNA Extractionist",
+  "entity.minecraft.villager.cylixr": "DNA Sequencer Specialist"
 }

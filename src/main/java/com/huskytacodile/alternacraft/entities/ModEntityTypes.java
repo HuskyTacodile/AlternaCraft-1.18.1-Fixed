@@ -28,6 +28,12 @@ public class ModEntityTypes {
                                     MobCategory.CREATURE).sized(4f, 4f)
                             .build(new ResourceLocation(Alternacraft.MOD_ID, "jpspino").toString()));
 
+    public static final RegistryObject<EntityType<SimplifiedSpinoEntity>> SIMPLIFIED_SPINO =
+            ENTITY_TYPES.register("simplified_spino",
+                    () -> EntityType.Builder.of(SimplifiedSpinoEntity::new,
+                                    MobCategory.CREATURE).sized(4f, 4f)
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "simplified_spino").toString()));
+
 
     public static final RegistryObject<EntityType<AlternasaurusEntity>> ALTERNASAURUS =
             ENTITY_TYPES.register("alternasaurus",
@@ -143,6 +149,12 @@ public class ModEntityTypes {
                     () -> EntityType.Builder.of(GigaEntity::new,
                                     MobCategory.CREATURE).sized(4f, 4f)
                             .build(new ResourceLocation(Alternacraft.MOD_ID, "giga").toString()));
+
+    public static final RegistryObject<EntityType<MalusaurusEntity>> MALUSAURUS =
+            ENTITY_TYPES.register("malusaurus",
+                    () -> EntityType.Builder.of(MalusaurusEntity::new,
+                                    MobCategory.CREATURE).sized(4.3f, 4.3f)
+                            .build(new ResourceLocation(Alternacraft.MOD_ID, "malusaurus").toString()));
 
     public static final RegistryObject<EntityType<BlueEntity>> BLUE =
             ENTITY_TYPES.register("blue",

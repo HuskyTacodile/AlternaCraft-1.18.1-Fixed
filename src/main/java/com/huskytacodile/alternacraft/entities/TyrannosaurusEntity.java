@@ -70,6 +70,7 @@ public class TyrannosaurusEntity extends TamableAnimal implements IAnimatable, I
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||

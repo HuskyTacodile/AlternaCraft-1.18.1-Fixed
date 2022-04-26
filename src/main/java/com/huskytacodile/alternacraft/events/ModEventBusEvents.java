@@ -41,6 +41,8 @@ public class ModEventBusEvents {
         event.put(ModEntityTypes.GIGA.get(), GigaEntity.attributes().build());
         event.put(ModEntityTypes.BLUE.get(), BlueEntity.attributes().build());
         event.put(ModEntityTypes.BETA.get(), BetaEntity.attributes().build());
+        event.put(ModEntityTypes.MALUSAURUS.get(), MalusaurusEntity.attributes().build());
+        event.put(ModEntityTypes.SIMPLIFIED_SPINO.get(), SimplifiedSpinoEntity.attributes().build());
     }
     @SubscribeEvent
     public static void onRegisterEntities(RegistryEvent.Register<EntityType<?>> event) {

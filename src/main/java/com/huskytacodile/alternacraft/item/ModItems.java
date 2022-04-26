@@ -20,6 +20,14 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.JPSPINO, 0x614141, 0xDC0000,
                     new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
 
+    public static final RegistryObject<ForgeSpawnEggItem> SIMPLIFIED_SPINO_SPAWN_EGG = ITEMS.register("simplified_spino_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.SIMPLIFIED_SPINO, 0x614141, 0xDC0000,
+                    new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
+
+    public static final RegistryObject<ForgeSpawnEggItem> MALUSAURUS_SPAWN_EGG = ITEMS.register("malusaurus_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.MALUSAURUS, 0x614141, 0xDC0000,
+                    new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
+
     public static final RegistryObject<ForgeSpawnEggItem> INDOMINUS_SPAWN_EGG = ITEMS.register("indominus_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.INDOMINUS, 0xC8C8C8, 0xA5A5A5,
                     new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
@@ -93,7 +101,7 @@ public class ModItems {
                     new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
 
     public static final RegistryObject<ForgeSpawnEggItem> COMPY_SPAWN_EGG = ITEMS.register("compy_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntityTypes.COMPY, 0x4D3D2D, 0xC00000,
+            () -> new ForgeSpawnEggItem(ModEntityTypes.COMPY, 0x9FDC55, 0x7D8F66,
                     new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP)));
 
     public static final RegistryObject<ForgeSpawnEggItem> MEGALO_SPAWN_EGG = ITEMS.register("megalo_spawn_egg",

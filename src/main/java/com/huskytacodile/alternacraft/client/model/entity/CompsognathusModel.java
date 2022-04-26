@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
+import com.huskytacodile.alternacraft.client.render.entity.CompsognathusRenderer;
 import com.huskytacodile.alternacraft.client.render.entity.JPSpinoRenderer;
 import com.huskytacodile.alternacraft.entities.CompsognathusEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -19,6 +20,6 @@ public class CompsognathusModel extends AnimatedGeoModel<CompsognathusEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(CompsognathusEntity entity)    {
-        return JPSpinoRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return CompsognathusRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

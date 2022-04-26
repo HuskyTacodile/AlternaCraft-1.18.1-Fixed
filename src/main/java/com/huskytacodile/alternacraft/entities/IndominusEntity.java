@@ -68,6 +68,7 @@ public class IndominusEntity extends TamableAnimal implements IAnimatable, ItemS
                 entitytype == ModEntityTypes.ALIORAMUS.get()||
                 entitytype == ModEntityTypes.BARYONYX.get()||
                 entitytype == ModEntityTypes.BARYONYX_GEN2.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.TYLOSAURUS.get()||
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||

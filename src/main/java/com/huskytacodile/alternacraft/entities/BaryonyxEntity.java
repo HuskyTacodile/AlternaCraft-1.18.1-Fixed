@@ -70,6 +70,7 @@ public class BaryonyxEntity extends TamableAnimal implements IAnimatable, ItemSt
                 entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.ALTERNASAURUS.get();
     };
     protected BaryonyxEntity(EntityType<? extends TamableAnimal> p_i48575_1_, Level p_i48575_2_) {

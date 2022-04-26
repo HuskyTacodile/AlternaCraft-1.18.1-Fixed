@@ -118,6 +118,26 @@ public class ModSoundEvents {
             registerSoundEvent("yuty_hurt");
     public static final RegistryObject<SoundEvent> YUTY_DEATH =
             registerSoundEvent("yuty_death");
+    public static final RegistryObject<SoundEvent> GIGA_AMBIENT =
+            registerSoundEvent("giga_ambient");
+    public static final RegistryObject<SoundEvent> GIGA_HURT =
+            registerSoundEvent("giga_hurt");
+    public static final RegistryObject<SoundEvent> GIGA_DEATH =
+            registerSoundEvent("giga_death");
+    public static final RegistryObject<SoundEvent> COMPY_AMBIENT =
+            registerSoundEvent("compy_ambient");
+    public static final RegistryObject<SoundEvent> COMPY_HURT =
+            registerSoundEvent("compy_hurt");
+    public static final RegistryObject<SoundEvent> COMPY_DEATH =
+            registerSoundEvent("compy_death");
+    public static final RegistryObject<SoundEvent> BETA_AMBIENT =
+            registerSoundEvent("beta_ambient");
+    public static final RegistryObject<SoundEvent> BLUE_AMBIENT =
+            registerSoundEvent("blue_ambient");
+    public static final RegistryObject<SoundEvent> BLUE_HURT =
+            registerSoundEvent("blue_hurt");
+    public static final RegistryObject<SoundEvent> BLUE_DEATH =
+            registerSoundEvent("blue_death");
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(Alternacraft.MOD_ID, name)));

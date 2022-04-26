@@ -35,7 +35,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_BANNER)));
 
     public static final RegistryObject<Block> ALTERNA_RADIATOR = registerBlock("alterna_radiator",
-            () -> new AlternaRadiatorBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
+            () -> new AlternaRadiatorBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(5f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> CONCRETE_STONE = registerBlock("concrete_stone",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f).requiresCorrectToolForDrops()));

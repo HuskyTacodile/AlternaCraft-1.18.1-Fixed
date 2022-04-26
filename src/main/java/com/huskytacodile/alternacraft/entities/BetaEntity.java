@@ -87,20 +87,20 @@ public class BetaEntity extends TamableAnimal implements IAnimatable, ItemSteera
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return ModSoundEvents.ACRO_GROWL.get();
+        return ModSoundEvents.BETA_AMBIENT.get();
     }
 
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        return ModSoundEvents.ACRO_ROAR1.get();
+        return ModSoundEvents.BLUE_DEATH.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
-        return ModSoundEvents.ACRO_ROAR2.get();
+        return ModSoundEvents.BLUE_HURT.get();
     }
     public boolean doHurtTarget(Entity p_70652_1_) {
         boolean flag = super.doHurtTarget(p_70652_1_);

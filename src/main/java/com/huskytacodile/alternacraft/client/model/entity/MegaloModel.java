@@ -2,6 +2,7 @@ package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.client.render.entity.JPSpinoRenderer;
+import com.huskytacodile.alternacraft.client.render.entity.MegaloRenderer;
 import com.huskytacodile.alternacraft.entities.MegaloEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
@@ -19,6 +20,6 @@ public class MegaloModel extends AnimatedGeoModel<MegaloEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(MegaloEntity entity)    {
-        return JPSpinoRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return MegaloRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 }

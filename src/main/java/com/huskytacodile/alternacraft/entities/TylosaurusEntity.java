@@ -63,6 +63,7 @@ public class TylosaurusEntity extends WaterAnimal implements IAnimatable {
                 entitytype == ModEntityTypes.TYRANNOSAURUS.get()||
                 entitytype == ModEntityTypes.YUTYRANNUS.get()||
                 entitytype == ModEntityTypes.CARCHA.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.ALIORAMUS.get()||
                 entitytype == ModEntityTypes.BARYONYX.get()||
                 entitytype == ModEntityTypes.BARYONYX_GEN2.get()||

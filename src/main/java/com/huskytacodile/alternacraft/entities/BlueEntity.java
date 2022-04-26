@@ -65,6 +65,7 @@ public class BlueEntity extends TamableAnimal implements IAnimatable, ItemSteera
                 entitytype == ModEntityTypes.ALIORAMUS.get()||
                 entitytype == ModEntityTypes.BARYONYX.get()||
                 entitytype == ModEntityTypes.BARYONYX_GEN2.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.TYLOSAURUS.get()||
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.CERATOSUCHOPS.get()||
@@ -104,20 +105,20 @@ public class BlueEntity extends TamableAnimal implements IAnimatable, ItemSteera
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return ModSoundEvents.ACRO_GROWL.get();
+        return ModSoundEvents.BLUE_AMBIENT.get();
     }
 
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        return ModSoundEvents.ACRO_ROAR1.get();
+        return ModSoundEvents.BLUE_DEATH.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
-        return ModSoundEvents.ACRO_ROAR2.get();
+        return ModSoundEvents.BLUE_HURT.get();
     }
     public boolean doHurtTarget(Entity p_70652_1_) {
         boolean flag = super.doHurtTarget(p_70652_1_);

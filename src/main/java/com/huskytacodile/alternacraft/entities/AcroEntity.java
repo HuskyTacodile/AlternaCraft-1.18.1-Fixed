@@ -73,6 +73,7 @@ public class AcroEntity extends TamableAnimal implements IAnimatable, ItemSteera
                 entitytype == ModEntityTypes.INDOMINUS.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||
+                entitytype == ModEntityTypes.GIGA.get()||
                 entitytype == ModEntityTypes.ALTERNASAURUS.get();
     };
     private static final EntityDataAccessor<Boolean> SITTING =
@@ -336,5 +337,9 @@ public class AcroEntity extends TamableAnimal implements IAnimatable, ItemSteera
     @Override
     public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
         return null;
+    }
+
+    public boolean canBeLeashed(Player player){
+        return false;
     }
 }

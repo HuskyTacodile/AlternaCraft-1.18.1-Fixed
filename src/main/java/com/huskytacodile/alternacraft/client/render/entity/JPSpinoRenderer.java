@@ -41,6 +41,11 @@ public class JPSpinoRenderer extends GeoEntityRenderer<JPSpinoEntity>
                                     @Nullable MultiBufferSource multiBufferSource, VertexConsumer vertexConsumer, int packedLightIn,
                                     ResourceLocation textureLocation)
     {
+        if(animatable.isBaby()) {
+            stack.scale(0.4F, 0.4F, 0.4F);
+        } else {
+            stack.scale(0.8F, 0.8F, 0.8F);
+        }
         return RenderType.entityTranslucent(getTextureLocation(animatable));
     }
     @Override

@@ -66,7 +66,6 @@ public class GigaEntity extends TamableAnimal implements IAnimatable, ItemSteera
                 entitytype == ModEntityTypes.MOSASAURUS.get()||
                 entitytype == ModEntityTypes.INDOMINUS.get()||
                 entitytype == ModEntityTypes.INDORAPTOR.get()||
-                entitytype == ModEntityTypes.ALLOSAURUS.get()||
                 entitytype == ModEntityTypes.ACRO.get()||
                 entitytype == ModEntityTypes.SCORPIUS.get()||
                 entitytype == ModEntityTypes.ALTERNASAURUS.get()||
@@ -118,20 +117,20 @@ public class GigaEntity extends TamableAnimal implements IAnimatable, ItemSteera
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return ModSoundEvents.SPINO_ROAR2.get();
+        return ModSoundEvents.GIGA_AMBIENT.get();
     }
 
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        return ModSoundEvents.SPINO_ROAR3.get();
+        return ModSoundEvents.GIGA_DEATH.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
-        return ModSoundEvents.SPINO_ROAR1.get();
+        return ModSoundEvents.GIGA_HURT.get();
     }
     public boolean doHurtTarget(Entity p_70652_1_) {
         boolean flag = super.doHurtTarget(p_70652_1_);
