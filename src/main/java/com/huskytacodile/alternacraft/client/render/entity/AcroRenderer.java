@@ -2,8 +2,7 @@ package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.AcroModel;
-import com.huskytacodile.alternacraft.entities.AcroEntity;
-import com.huskytacodile.alternacraft.entities.JPSpinoEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.AcroEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

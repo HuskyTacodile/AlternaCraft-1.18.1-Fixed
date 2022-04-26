@@ -1,9 +1,7 @@
 package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.google.common.collect.Maps;
-import com.huskytacodile.alternacraft.client.model.entity.JPSpinoModel;
 import com.huskytacodile.alternacraft.client.model.entity.MalusaurusModel;
-import com.huskytacodile.alternacraft.entities.JPSpinoEntity;
 import com.huskytacodile.alternacraft.entities.MalusaurusEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
 import com.mojang.blaze3d.vertex.PoseStack;

@@ -3,9 +3,7 @@ package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.ScorpiusModel;
-import com.huskytacodile.alternacraft.entities.AllosaurusEntity;
-import com.huskytacodile.alternacraft.entities.ScorpiusEntity;
-import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.ScorpiusEntity;
 import com.huskytacodile.alternacraft.entities.variant.QuadVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

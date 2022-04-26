@@ -1,8 +1,7 @@
 package com.huskytacodile.alternacraft.client.render.entity;
 import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.BaryonyxGen2Model;
-import com.huskytacodile.alternacraft.entities.AllosaurusEntity;
-import com.huskytacodile.alternacraft.entities.BaryonyxGen2Entity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.semiaquatic.BaryonyxGen2Entity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

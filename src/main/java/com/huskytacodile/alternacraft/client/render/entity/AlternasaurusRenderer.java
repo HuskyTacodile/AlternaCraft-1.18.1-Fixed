@@ -2,7 +2,6 @@ package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.AlternasaurusModel;
-import com.huskytacodile.alternacraft.entities.AllosaurusEntity;
 import com.huskytacodile.alternacraft.entities.AlternasaurusEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
 import com.mojang.blaze3d.vertex.PoseStack;

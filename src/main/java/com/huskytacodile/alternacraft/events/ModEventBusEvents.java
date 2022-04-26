@@ -3,16 +3,20 @@ package com.huskytacodile.alternacraft.events;
 import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.entities.*;
 
-import net.minecraft.resources.ResourceLocation;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.*;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.IndominusEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.IndoraptorEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.ScorpiusEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.medium.MegaloEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.medium.raptor.BlueEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.semiaquatic.*;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.small.CompsognathusEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.SpawnEggItem;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import javax.annotation.Nonnull;
 
 @Mod.EventBusSubscriber(modid = Alternacraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
@@ -21,7 +25,7 @@ public class ModEventBusEvents {
         event.put(ModEntityTypes.JPSPINO.get(), JPSpinoEntity.attributes().build());
         event.put(ModEntityTypes.INDOMINUS.get(), IndominusEntity.attributes().build());
         event.put(ModEntityTypes.ACRO.get(), AcroEntity.attributes().build());
-        event.put(ModEntityTypes.OXALAIA.get(), OxalaiaEntity.attributes().build());
+        event.put(ModEntityTypes.OXALAIA.get(), SuchomimusEntity.attributes().build());
         event.put(ModEntityTypes.INDORAPTOR.get(), IndoraptorEntity.attributes().build());
         event.put(ModEntityTypes.CERATOSUCHOPS.get(), CeratosuchopsEntity.attributes().build());
         event.put(ModEntityTypes.ALTERNASAURUS.get(), AlternasaurusEntity.attributes().build());

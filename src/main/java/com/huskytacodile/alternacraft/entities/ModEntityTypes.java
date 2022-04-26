@@ -2,6 +2,14 @@ package com.huskytacodile.alternacraft.entities;
 
 import com.huskytacodile.alternacraft.Alternacraft;
 
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.*;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.IndominusEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.IndoraptorEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.ScorpiusEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.medium.MegaloEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.medium.raptor.BlueEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.semiaquatic.*;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.small.CompsognathusEntity;
 import net.minecraft.resources.ResourceLocation;
 
 import net.minecraft.world.entity.EntityType;
@@ -60,9 +68,9 @@ public class ModEntityTypes {
                                     MobCategory.CREATURE).sized(4f, 4f)
                             .build(new ResourceLocation(Alternacraft.MOD_ID, "mosasaurus").toString()));
 
-    public static final RegistryObject<EntityType<OxalaiaEntity>> OXALAIA =
+    public static final RegistryObject<EntityType<SuchomimusEntity>> OXALAIA =
             ENTITY_TYPES.register("oxalaia",
-                    () -> EntityType.Builder.of(OxalaiaEntity::new,
+                    () -> EntityType.Builder.of(SuchomimusEntity::new,
                                     MobCategory.CREATURE).sized(4f, 4f)
                             .build(new ResourceLocation(Alternacraft.MOD_ID, "oxalaia").toString()));
 

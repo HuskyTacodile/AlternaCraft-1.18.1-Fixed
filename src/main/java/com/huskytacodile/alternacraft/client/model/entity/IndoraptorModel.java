@@ -2,7 +2,7 @@ package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
-import com.huskytacodile.alternacraft.entities.IndoraptorEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.IndoraptorEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

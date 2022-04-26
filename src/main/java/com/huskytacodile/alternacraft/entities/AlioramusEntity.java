@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.entities;
 
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
+import com.huskytacodile.alternacraft.entities.variant.IVariant;
 import com.huskytacodile.alternacraft.item.ModItems;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
 import net.minecraft.Util;
@@ -112,7 +113,7 @@ public class AlioramusEntity extends TamableAnimal implements IAnimatable, Playe
         super.readAdditionalSaveData(p_21815_);
         this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
     }
-    public GenderVariant getVariant() {
+    public IVariant getVariant() {
         return GenderVariant.byId(this.getTypeVariant() & 255);
     }
 

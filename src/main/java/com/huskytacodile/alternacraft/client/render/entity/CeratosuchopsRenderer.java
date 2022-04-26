@@ -3,8 +3,7 @@ package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.CeratosuchopsModel;
-import com.huskytacodile.alternacraft.entities.AllosaurusEntity;
-import com.huskytacodile.alternacraft.entities.CeratosuchopsEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.semiaquatic.CeratosuchopsEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

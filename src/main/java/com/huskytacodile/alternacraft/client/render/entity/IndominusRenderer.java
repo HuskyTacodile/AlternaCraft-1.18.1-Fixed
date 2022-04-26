@@ -3,7 +3,7 @@ package com.huskytacodile.alternacraft.client.render.entity;
 import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.IndominusModel;
 
-import com.huskytacodile.alternacraft.entities.IndominusEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.hybrid.IndominusEntity;
 
 import com.huskytacodile.alternacraft.entities.variant.QuintiVariant;
 import com.mojang.blaze3d.vertex.PoseStack;

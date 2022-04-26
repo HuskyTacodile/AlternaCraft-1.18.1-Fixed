@@ -2,7 +2,7 @@ package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.GigaModel;
-import com.huskytacodile.alternacraft.entities.GigaEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.GigaEntity;
 import com.huskytacodile.alternacraft.entities.variant.QuadVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

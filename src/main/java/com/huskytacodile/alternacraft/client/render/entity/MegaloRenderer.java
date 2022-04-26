@@ -1,11 +1,9 @@
 package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.google.common.collect.Maps;
-import com.huskytacodile.alternacraft.client.model.entity.CompsognathusModel;
 import com.huskytacodile.alternacraft.client.model.entity.MegaloModel;
-import com.huskytacodile.alternacraft.entities.MegaloEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.medium.MegaloEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
-import com.huskytacodile.alternacraft.entities.variant.MultiVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.Util;

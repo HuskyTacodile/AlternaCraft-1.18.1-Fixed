@@ -3,7 +3,7 @@ package com.huskytacodile.alternacraft.entities.variant;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum QuintiVariant {
+public enum QuintiVariant implements IVariant {
     MALE(0),
     FEMALE(1),
     FEMALE2(2),

@@ -4,8 +4,7 @@ package com.huskytacodile.alternacraft.client.render.entity;
 import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.OxalaiaModel;
 
-import com.huskytacodile.alternacraft.entities.AllosaurusEntity;
-import com.huskytacodile.alternacraft.entities.OxalaiaEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.semiaquatic.SuchomimusEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -19,7 +18,7 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class OxalaiaRenderer extends GeoEntityRenderer<OxalaiaEntity>
+public class OxalaiaRenderer extends GeoEntityRenderer<SuchomimusEntity>
 {
     public OxalaiaRenderer(EntityRendererProvider.Context entityRendererProvider) {
         super(entityRendererProvider, new OxalaiaModel());
@@ -31,18 +30,18 @@ public class OxalaiaRenderer extends GeoEntityRenderer<OxalaiaEntity>
                 p_114874_.put(GenderVariant.FEMALE, new ResourceLocation("alternacraft:textures/entity/oxalaia_female.png"));
             });
     @Override
-    public ResourceLocation getTextureLocation(OxalaiaEntity entity) {
+    public ResourceLocation getTextureLocation(SuchomimusEntity entity) {
         return LOCATION_BY_VARIANT.get(entity.getVariant());
     }
     @Override
-    public RenderType getRenderType(OxalaiaEntity animatable, float partialTicks, PoseStack stack,
+    public RenderType getRenderType(SuchomimusEntity animatable, float partialTicks, PoseStack stack,
                                     @Nullable MultiBufferSource multiBufferSource, VertexConsumer vertexConsumer, int packedLightIn,
                                     ResourceLocation textureLocation)
     {
         return RenderType.entityTranslucent(getTextureLocation(animatable));
     }
     @Override
-    protected float getDeathMaxRotation(OxalaiaEntity entityLivingBaseIn){
+    protected float getDeathMaxRotation(SuchomimusEntity entityLivingBaseIn){
         return 0.0F;
     }
 }

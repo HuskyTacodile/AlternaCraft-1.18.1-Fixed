@@ -1,9 +1,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
-import com.huskytacodile.alternacraft.client.render.entity.JPSpinoRenderer;
 import com.huskytacodile.alternacraft.client.render.entity.MalusaurusRenderer;
-import com.huskytacodile.alternacraft.entities.JPSpinoEntity;
 import com.huskytacodile.alternacraft.entities.MalusaurusEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;

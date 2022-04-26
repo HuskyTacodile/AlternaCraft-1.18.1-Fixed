@@ -1,13 +1,9 @@
 package com.huskytacodile.alternacraft.client.render.entity;
 
-import com.google.common.collect.Maps;
 import com.huskytacodile.alternacraft.client.model.entity.BlueModel;
-import com.huskytacodile.alternacraft.entities.AcroEntity;
-import com.huskytacodile.alternacraft.entities.BlueEntity;
-import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.medium.raptor.BlueEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -15,7 +11,6 @@ import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 import javax.annotation.Nullable;
-import java.util.Map;
 
 public class BlueRenderer extends GeoEntityRenderer<BlueEntity>
 {

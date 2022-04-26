@@ -2,7 +2,7 @@ package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.client.render.entity.GigaRenderer;
-import com.huskytacodile.alternacraft.entities.GigaEntity;
+import com.huskytacodile.alternacraft.entities.dinos.carnivore.large.GigaEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

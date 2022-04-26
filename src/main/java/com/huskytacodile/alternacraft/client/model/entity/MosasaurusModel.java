@@ -1,9 +1,7 @@
 package com.huskytacodile.alternacraft.client.model.entity;
 
 import com.huskytacodile.alternacraft.Alternacraft;
-import com.huskytacodile.alternacraft.client.render.entity.IndoraptorRenderer;
 import com.huskytacodile.alternacraft.client.render.entity.MosasaurusRenderer;
-import com.huskytacodile.alternacraft.entities.IndoraptorEntity;
 import com.huskytacodile.alternacraft.entities.MosasaurusEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
