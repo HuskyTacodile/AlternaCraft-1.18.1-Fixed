@@ -19,6 +19,6 @@ public class MalusaurusModel extends AnimatedGeoModel<MalusaurusEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(MalusaurusEntity entity)    {
-        return MalusaurusRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+        return new ResourceLocation(Alternacraft.MOD_ID, "textures/entity/malusaurus.png");
     }
 }

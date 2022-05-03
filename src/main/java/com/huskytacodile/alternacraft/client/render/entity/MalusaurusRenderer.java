@@ -1,6 +1,7 @@
 package com.huskytacodile.alternacraft.client.render.entity;
 
 import com.google.common.collect.Maps;
+import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.client.model.entity.MalusaurusModel;
 import com.huskytacodile.alternacraft.entities.MalusaurusEntity;
 import com.huskytacodile.alternacraft.entities.variant.GenderVariant;
@@ -29,7 +30,7 @@ public class MalusaurusRenderer extends GeoEntityRenderer<MalusaurusEntity>
             });
     @Override
     public ResourceLocation getTextureLocation(MalusaurusEntity entity) {
-        return LOCATION_BY_VARIANT.get(entity.getVariant());
+        return new ResourceLocation(Alternacraft.MOD_ID, "textures/entity/malusaurus.png");
     }
 
     @Override

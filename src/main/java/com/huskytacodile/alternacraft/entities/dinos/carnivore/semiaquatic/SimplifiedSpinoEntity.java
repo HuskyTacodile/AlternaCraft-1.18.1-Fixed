@@ -38,6 +38,7 @@ public class SimplifiedSpinoEntity extends SemiAquaticEntity {
                 .add(Attributes.FOLLOW_RANGE, 16.0D)
                 .add(Attributes.ATTACK_DAMAGE, 10.0D);
     }
+
     @Override
     protected void registerGoals() {
         super.registerGoals();
