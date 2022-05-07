@@ -1,14 +1,18 @@
 package com.huskytacodile.alternacraft;
 
 import com.huskytacodile.alternacraft.block.ModBlocks;
+import com.huskytacodile.alternacraft.block.entity.ModBlockEntities;
 import com.huskytacodile.alternacraft.client.render.entity.*;
 import com.huskytacodile.alternacraft.enchantment.ModEnchantments;
 import com.huskytacodile.alternacraft.entities.ModEntityTypes;
 import com.huskytacodile.alternacraft.entities.ModVillagers;
 import com.huskytacodile.alternacraft.item.ModItems;
+import com.huskytacodile.alternacraft.recipe.ModRecipes;
+import com.huskytacodile.alternacraft.screen.FossilGrinderScreen;
 import com.huskytacodile.alternacraft.screen.ModMenuTypes;
 import com.huskytacodile.alternacraft.util.ModItemProperties;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Blocks;
@@ -19,6 +23,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -40,9 +45,13 @@ public class Alternacraft {
         ModSoundEvents.register(eventBus);
         ModEnchantments.register(eventBus);
         ModMenuTypes.register(eventBus);
+        ModRecipes.register(eventBus);
+        ModBlockEntities.register(eventBus);
+
         ModVillagers.VILLAGER_PROFESSIONS.register(eventBus);
         ModVillagers.POINT_OF_INTEREST_TYPES.register(eventBus);
         eventBus.addListener(this::setup);
+        eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::registerRenderers);
 
         // Register ourselves for server and other game events we are interested in
@@ -97,5 +106,10 @@ public class Alternacraft {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event)
+    {
+        MenuScreens.register(ModMenuTypes.FOSSIL_GRINDER.get(), FossilGrinderScreen::new);
     }
 }

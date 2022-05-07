@@ -3,6 +3,7 @@ package com.huskytacodile.alternacraft.block;
 import com.huskytacodile.alternacraft.Alternacraft;
 
 import com.huskytacodile.alternacraft.block.custom.AlternaRadiatorBlock;
+import com.huskytacodile.alternacraft.block.custom.FossilGrinderBlock;
 import com.huskytacodile.alternacraft.item.ModCreativeModeTab;
 import com.huskytacodile.alternacraft.item.ModItems;
 
@@ -183,6 +184,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DNA_COMBINATOR = registerBlock("dna_combinator",
             () -> new LanternBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> FOSSIL_GRINDER = registerBlock("fossil_grinder",
+            () -> new FossilGrinderBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f)
+                    .requiresCorrectToolForDrops()));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

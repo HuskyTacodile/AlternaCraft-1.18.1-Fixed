@@ -1,0 +1,14 @@
+{
+  "type": "alternacraft:fossil_grinder",
+  "ingredients": [
+    {
+      "item": "alternacraft:fossil"
+    },
+    {
+      "item": "alternacraft:fossil"
+    }
+  ],
+  "output": {
+    "item": "alternacraft:primordial_shard"
+  }
+}

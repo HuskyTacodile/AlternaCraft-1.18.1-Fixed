@@ -16,6 +16,9 @@ public class ModMenuTypes {
             DeferredRegister.create(ForgeRegistries.CONTAINERS, Alternacraft.MOD_ID);
 
 
+    public static final RegistryObject<MenuType<FossilGrinderMenu>> FOSSIL_GRINDER =
+            registerMenuType(FossilGrinderMenu::new, "fossil_grinder");
+
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
