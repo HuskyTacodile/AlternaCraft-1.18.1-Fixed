@@ -24,7 +24,7 @@ public class FossilGrinderMenu extends AbstractContainerMenu {
 
     public FossilGrinderMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.FOSSIL_GRINDER.get(), pContainerId);
-        checkContainerSize(inv, 4);
+        checkContainerSize(inv, 6);
         blockEntity = ((FossilGrinderBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
@@ -35,7 +35,10 @@ public class FossilGrinderMenu extends AbstractContainerMenu {
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler, 0, 37, 17));
             this.addSlot(new SlotItemHandler(handler, 1, 37, 53));
-            this.addSlot(new ModResultSlot(handler, 2, 116, 35));
+            this.addSlot(new ModResultSlot(handler, 2, 104, 24));
+            this.addSlot(new ModResultSlot(handler, 3, 125, 24));
+            this.addSlot(new ModResultSlot(handler, 4, 104, 45));
+            this.addSlot(new ModResultSlot(handler, 5, 125, 45));
         });
 
         addDataSlots(data);
@@ -69,7 +72,7 @@ public class FossilGrinderMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 6;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {

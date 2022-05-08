@@ -1,10 +1,15 @@
 package com.huskytacodile.alternacraft.util;
 
+import com.huskytacodile.alternacraft.Alternacraft;
+import com.huskytacodile.alternacraft.item.ModItems;
 import net.minecraft.client.renderer.item.ItemProperties;
 
 import net.minecraft.resources.ResourceLocation;
 
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+
+import java.util.Map;
 
 public class ModItemProperties {
     public static void makeBow(Item item) {
@@ -19,5 +24,10 @@ public class ModItemProperties {
         ItemProperties.register(item, new ResourceLocation("pulling"), (p_239428_0_, p_239428_1_, p_239428_2_,p_239429_3_) -> {
             return p_239428_2_ != null && p_239428_2_.isUsingItem() && p_239428_2_.getUseItem() == p_239428_0_ ? 1.0F : 0.0F;
         });
+    }
+
+    public static void customProperties() {
+        ItemProperties.register(ModItems.DNA_SYRINGE.get(), new ResourceLocation(Alternacraft.MOD_ID, "dna"),
+                ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
     }
 }

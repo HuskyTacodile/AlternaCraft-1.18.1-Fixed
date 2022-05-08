@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "alternacraft:item/dna_syringe"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "alternacraft:dna": 1
+      },
+      "model": "alternacraft:item/syringes/spinosaurus_dna_syringe"
+    }
+  ]
+}

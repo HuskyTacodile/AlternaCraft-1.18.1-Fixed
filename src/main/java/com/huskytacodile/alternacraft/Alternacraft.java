@@ -92,6 +92,7 @@ public class Alternacraft {
 
 
         ModItemProperties.makeBow(ModItems.PAINITE_BOW.get());
+        ModItemProperties.customProperties();
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_SEQUENCER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ALTERNA_RADIATOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_COMBINATOR.get(), RenderType.cutout());

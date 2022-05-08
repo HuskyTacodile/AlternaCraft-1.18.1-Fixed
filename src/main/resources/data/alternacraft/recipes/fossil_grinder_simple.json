@@ -5,10 +5,10 @@
       "item": "alternacraft:fossil"
     },
     {
-      "item": "alternacraft:fossil"
+      "item": "alternacraft:dna_syringe"
     }
   ],
   "output": {
-    "item": "alternacraft:primordial_shard"
+    "item": "alternacraft:dna_syringe"
   }
 }

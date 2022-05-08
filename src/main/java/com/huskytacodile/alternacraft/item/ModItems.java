@@ -185,6 +185,10 @@ public class ModItems {
     public static final RegistryObject<PainiteBowItem> PAINITE_BOW = ITEMS.register("painite_bow",
             () -> new PainiteBowItem(new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP).stacksTo(1)));
 
+
+    public static final RegistryObject<Item> DNA_SYRINGE = ITEMS.register("dna_syringe",
+            () -> new DNASyringeItem(new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP).stacksTo(1)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

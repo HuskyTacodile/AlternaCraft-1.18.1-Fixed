@@ -31,7 +31,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class FossilGrinderBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(6) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -165,11 +165,27 @@ public class FossilGrinderBlockEntity extends BlockEntity implements MenuProvide
             entity.itemHandler.extractItem(0,1, false);
             entity.itemHandler.extractItem(1,1, false);
 
-            entity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getResultItem().getItem(),
-                    entity.itemHandler.getStackInSlot(2).getCount() + 1));
+            // TODO: New Method that randomizes this
+            CompoundTag tag = new CompoundTag();
+            tag.putString("alternacraft:dna", "Spinosaurus");
+
+            ItemStack toPlace = new ItemStack(match.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(getNextFreeOutputSlot(inventory)).getCount() + 1);
+            toPlace.setTag(tag);
+
+            entity.itemHandler.setStackInSlot(getNextFreeOutputSlot(inventory), toPlace);
 
             entity.resetProgress();
         }
+    }
+
+    private static int getNextFreeOutputSlot(SimpleContainer inventory) {
+        int toReturn = -1;
+        for(int i = 5; i >= 2; i--) {
+            toReturn = inventory.getItem(i).isEmpty() ? i : toReturn;
+        }
+
+        return toReturn;
     }
 
     private void resetProgress() {
@@ -177,10 +193,22 @@ public class FossilGrinderBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(2).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
+        int nextFreeSlot = getNextFreeOutputSlot(inventory);
+
+        if(nextFreeSlot == -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-        return inventory.getItem(2).getMaxStackSize() > inventory.getItem(2).getCount();
+        int nextFreeSlot = getNextFreeOutputSlot(inventory);
+
+        if(nextFreeSlot == -1) {
+            return false;
+        }
+
+        return inventory.getItem(nextFreeSlot).getMaxStackSize() > inventory.getItem(nextFreeSlot).getCount();
     }
 }
