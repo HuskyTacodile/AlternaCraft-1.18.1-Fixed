@@ -212,7 +212,7 @@ public abstract class AlternaDinoEntity extends TamableAnimal implements IAnimat
     public abstract String getAnimationName();
 
     protected  <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (!(animationSpeed > -0.10F && animationSpeed < 0.05F) && this.isAggressive()) {
+        if (!(animationSpeed > -0.10F && animationSpeed < 0.05F)) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation." + getAnimationName() + ".walk", true));
             return PlayState.CONTINUE;
         }

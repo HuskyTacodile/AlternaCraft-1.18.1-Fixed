@@ -1,5 +1,6 @@
 package com.huskytacodile.alternacraft.entities.dinos.carnivore.large;
 
+import com.huskytacodile.alternacraft.entities.ai.GeckoMeleeAttackGoal;
 import com.huskytacodile.alternacraft.entities.dinos.LargeCarnivoreEntity;
 import com.huskytacodile.alternacraft.util.ModSoundEvents;
 import net.minecraft.server.level.ServerLevel;
@@ -46,7 +47,7 @@ public class AcroEntity extends LargeCarnivoreEntity {
         super.registerGoals();
         this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, false));
+        this.goalSelector.addGoal(4, new GeckoMeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
