@@ -23,8 +23,8 @@ public class DNASyringeItem extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if(pStack.hasTag()) {
-            String currentOre = pStack.getTag().getString("alternacraft:dna");
-            pTooltipComponents.add(new TextComponent("DNA: " + currentOre));
+            String currentDNA = pStack.getTag().getString("alternacraft:dna");
+            pTooltipComponents.add(new TextComponent("DNA: " + currentDNA));
         }
 
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);

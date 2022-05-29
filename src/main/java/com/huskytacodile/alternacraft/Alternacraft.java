@@ -89,17 +89,13 @@ public class Alternacraft {
         event.registerEntityRenderer(ModEntityTypes.MALUSAURUS.get(), manager -> new MalusaurusRenderer(manager));
         event.registerEntityRenderer(ModEntityTypes.SIMPLIFIED_SPINO.get(), manager -> new SimplifiedSpinoRenderer(manager));
 
-
-
         ModItemProperties.makeBow(ModItems.PAINITE_BOW.get());
-        ModItemProperties.customProperties();
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_SEQUENCER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ALTERNA_RADIATOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_COMBINATOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DNA_EXTRACTOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CLADOPHLEBIS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.JW_BANNER.get(),RenderType.cutout());
-
     }
 
     private void setup(final FMLCommonSetupEvent event)

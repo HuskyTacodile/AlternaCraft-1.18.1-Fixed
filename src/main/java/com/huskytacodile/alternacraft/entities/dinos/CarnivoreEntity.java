@@ -21,8 +21,6 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import java.util.function.Predicate;
 
 public abstract class CarnivoreEntity extends AlternaDinoEntity {
-    public boolean isAttacking = false;
-
     protected static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(CarnivoreEntity.class, EntityDataSerializers.BOOLEAN);
 

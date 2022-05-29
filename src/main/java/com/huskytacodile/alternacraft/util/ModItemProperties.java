@@ -25,9 +25,4 @@ public class ModItemProperties {
             return p_239428_2_ != null && p_239428_2_.isUsingItem() && p_239428_2_.getUseItem() == p_239428_0_ ? 1.0F : 0.0F;
         });
     }
-
-    public static void customProperties() {
-        ItemProperties.register(ModItems.DNA_SYRINGE.get(), new ResourceLocation(Alternacraft.MOD_ID, "dna"),
-                ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
-    }
 }

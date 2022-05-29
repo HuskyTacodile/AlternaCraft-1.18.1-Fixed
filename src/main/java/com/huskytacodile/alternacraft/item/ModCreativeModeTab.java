@@ -18,4 +18,10 @@ public class ModCreativeModeTab {
             return new ItemStack(ModBlocks.CONCRETE_BRICKS.get());
         }
     };
+    public static final CreativeModeTab DNA_SYRINGES = new CreativeModeTab("dna_syringes") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.EMPTY_SYRINGE.get());
+        }
+    };
 }

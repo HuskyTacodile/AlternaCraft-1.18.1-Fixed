@@ -11,9 +11,11 @@ import com.huskytacodile.alternacraft.entities.dinos.carnivore.medium.MegaloEnti
 import com.huskytacodile.alternacraft.entities.dinos.carnivore.medium.raptor.BlueEntity;
 import com.huskytacodile.alternacraft.entities.dinos.carnivore.semiaquatic.*;
 import com.huskytacodile.alternacraft.entities.dinos.carnivore.small.CompsognathusEntity;
+import com.huskytacodile.alternacraft.item.ModItems;
 import com.huskytacodile.alternacraft.recipe.FossilGrinderRecipe;
 import net.minecraft.core.Registry;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.event.RegistryEvent;
@@ -50,6 +52,11 @@ public class ModEventBusEvents {
         event.put(ModEntityTypes.BETA.get(), BetaEntity.attributes().build());
         event.put(ModEntityTypes.MALUSAURUS.get(), MalusaurusEntity.attributes().build());
         event.put(ModEntityTypes.SIMPLIFIED_SPINO.get(), SimplifiedSpinoEntity.attributes().build());
+    }
+
+    @SubscribeEvent
+    public static void onRegisterItems(RegistryEvent.Register<Item> event) {
+        ModItems.onRegisterItems(event.getRegistry());
     }
 
     @SubscribeEvent

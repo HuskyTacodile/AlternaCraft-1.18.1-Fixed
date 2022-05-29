@@ -4,13 +4,20 @@ import com.huskytacodile.alternacraft.Alternacraft;
 import com.huskytacodile.alternacraft.entities.ModEntityTypes;
 import com.huskytacodile.alternacraft.item.custom.*;
 
+import com.huskytacodile.alternacraft.util.Dino;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -185,9 +192,27 @@ public class ModItems {
     public static final RegistryObject<PainiteBowItem> PAINITE_BOW = ITEMS.register("painite_bow",
             () -> new PainiteBowItem(new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP).stacksTo(1)));
 
+    public static final RegistryObject<Item> EMPTY_SYRINGE = ITEMS.register("dna_syringe",
+            () -> new DNASyringeItem(new Item.Properties().tab(ModCreativeModeTab.DNA_SYRINGES).stacksTo(1)));
 
-    public static final RegistryObject<Item> DNA_SYRINGE = ITEMS.register("dna_syringe",
-            () -> new DNASyringeItem(new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP).stacksTo(1)));
+    /* SYRINGES RESOURCES */
+    public static void onRegisterItems(IForgeRegistry<Item> registry) {
+        var resources = Dino.values();
+
+        Arrays.stream(resources).forEach(dino -> {
+            Item syringeItem = null;
+
+            if (syringeItem == null) {
+                syringeItem = new DNASyringeItem(new Item.Properties().tab(ModCreativeModeTab.DNA_SYRINGES));
+            }
+
+            if(syringeItem.getRegistryName() == null) {
+                syringeItem.setRegistryName(new ResourceLocation(Alternacraft.MOD_ID,"dna_syringe_" + dino.getName()));
+            }
+
+            registry.register(syringeItem);
+        });
+    }
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
