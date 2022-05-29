@@ -193,9 +193,9 @@ public class ModItems {
             () -> new PainiteBowItem(new Item.Properties().tab(ModCreativeModeTab.ALTERNACRAFT_GROUP).stacksTo(1)));
 
     public static final RegistryObject<Item> EMPTY_SYRINGE = ITEMS.register("dna_syringe",
-            () -> new DNASyringeItem(new Item.Properties().tab(ModCreativeModeTab.DNA_SYRINGES).stacksTo(1)));
+            () -> new DNASyringeItem(new Item.Properties().tab(ModCreativeModeTab.DNA_SYRINGES)));
 
-    /* SYRINGES RESOURCES */
+    /* DNA SYRINGES */
     public static void onRegisterItems(IForgeRegistry<Item> registry) {
         var resources = Dino.values();
 
@@ -208,6 +208,7 @@ public class ModItems {
 
             if(syringeItem.getRegistryName() == null) {
                 syringeItem.setRegistryName(new ResourceLocation(Alternacraft.MOD_ID,"dna_syringe_" + dino.getName()));
+                dino.setSyringeItem(syringeItem);
             }
 
             registry.register(syringeItem);

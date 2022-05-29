@@ -1,5 +1,6 @@
 package com.huskytacodile.alternacraft.item.custom;
 
+import com.huskytacodile.alternacraft.util.Dino;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.item.Item;
@@ -22,11 +23,7 @@ public class DNASyringeItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if(pStack.hasTag()) {
-            String currentDNA = pStack.getTag().getString("alternacraft:dna");
-            pTooltipComponents.add(new TextComponent("DNA: " + currentDNA));
-        }
-
+        pTooltipComponents.add(new TextComponent("DNA: " + Dino.getDinoByItem(this).getName()));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }

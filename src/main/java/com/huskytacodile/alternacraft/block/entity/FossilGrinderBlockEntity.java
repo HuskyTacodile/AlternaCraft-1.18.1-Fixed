@@ -2,6 +2,8 @@ package com.huskytacodile.alternacraft.block.entity;
 
 import com.huskytacodile.alternacraft.recipe.FossilGrinderRecipe;
 import com.huskytacodile.alternacraft.screen.FossilGrinderMenu;
+import com.huskytacodile.alternacraft.util.DNATier;
+import com.huskytacodile.alternacraft.util.Dino;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -165,14 +167,10 @@ public class FossilGrinderBlockEntity extends BlockEntity implements MenuProvide
             entity.itemHandler.extractItem(0,1, false);
             entity.itemHandler.extractItem(1,1, false);
 
-            // TODO: New Method that randomizes this
-            CompoundTag tag = new CompoundTag();
-            tag.putString("alternacraft:dna", "Spinosaurus");
+            DNATier tierToCraft = DNATier.COMMON;
 
-            ItemStack toPlace = new ItemStack(match.get().getResultItem().getItem(),
+            ItemStack toPlace = new ItemStack(Dino.getRandomSyringeByTier(tierToCraft),
                     entity.itemHandler.getStackInSlot(getNextFreeOutputSlot(inventory)).getCount() + 1);
-            toPlace.setTag(tag);
-
             entity.itemHandler.setStackInSlot(getNextFreeOutputSlot(inventory), toPlace);
 
             entity.resetProgress();
@@ -182,7 +180,8 @@ public class FossilGrinderBlockEntity extends BlockEntity implements MenuProvide
     private static int getNextFreeOutputSlot(SimpleContainer inventory) {
         int toReturn = -1;
         for(int i = 5; i >= 2; i--) {
-            toReturn = inventory.getItem(i).isEmpty() ? i : toReturn;
+            toReturn = inventory.getItem(i).isEmpty() || (inventory.getItem(i).getMaxStackSize() < inventory.getItem(i).getCount() + 1)
+                    ? i : toReturn;
         }
 
         return toReturn;
