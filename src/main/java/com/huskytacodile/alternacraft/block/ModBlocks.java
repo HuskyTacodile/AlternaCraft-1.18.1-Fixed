@@ -189,6 +189,11 @@ public class ModBlocks {
             () -> new FossilGrinderBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f)
                     .requiresCorrectToolForDrops()));
 
+
+    public static final RegistryObject<Block> SECURITY_FENCE = registerBlock("security_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f)
+                    .requiresCorrectToolForDrops()));
+
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

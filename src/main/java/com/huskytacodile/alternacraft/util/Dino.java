@@ -7,41 +7,41 @@ import java.util.Random;
 
 public enum Dino {
     EMPTY("empty", DNATier.COMMON),
-    ACRO("acrocanthosaurus", DNATier.COMMON),
-    ALBERTO("albertosaurus", DNATier.COMMON),
-    ATROCIRAPTOR("atrociraptor", DNATier.COMMON),
-    BARYG1("baryg1", DNATier.COMMON),
-    BARYG2("baryg2", DNATier.COMMON),
-    CARCHARODONTOSAURUS("carcharodontosaurus", DNATier.COMMON),
+    ACRO("acrocanthosaurus", DNATier.VERY_RARE),
+    ALBERTO("albertosaurus", DNATier.VERY_RARE),
+    ATROCIRAPTOR("atrociraptor", DNATier.UNCOMMON),
+    BARYG1("baryg1", DNATier.RARE),
+    BARYG2("baryg2", DNATier.RARE),
+    CARCHARODONTOSAURUS("carcharodontosaurus", DNATier.VERY_RARE),
     CARNORAPTOR("carnoraptor", DNATier.COMMON),
-    CARNOTAURUS("carnotaurus", DNATier.COMMON),
-    CERATO("cerato", DNATier.COMMON),
+    CARNOTAURUS("carnotaurus", DNATier.RARE),
+    CERATO("cerato", DNATier.RARE),
     COELOPHYSIS("coelophysis", DNATier.COMMON),
-    DILOPHOSAURUS("dilophosaurus", DNATier.COMMON),
-    GIGANTOSAURUS("giganotosaurus", DNATier.COMMON),
-    GIRAFFTITAN("girafftitan", DNATier.COMMON),
-    HERRERASAURUS("herrerasaurus", DNATier.COMMON),
-    IBEROSPINUS("iberospinus", DNATier.COMMON),
-    ICHTYOVENATOR("ichtyovenator", DNATier.COMMON),
-    INDOMINUS_REX("indominus_rex", true, DNATier.TIER3),
-    INDORAPTOR("indoraptor", true, DNATier.TIER3),
-    MOROS_INTREPIDUS("moros_intrepidus", DNATier.TIER3),
-    MOSASAURUS("mosasaurus", DNATier.TIER2),
-    OVIRAPTOR("oviraptor", DNATier.TIER2),
-    PYRORAPTOR("pyroraptor", DNATier.TIER3),
-    QIANZHOUSAURUS("qianzhousaurus", DNATier.COMMON),
-    SARCHOSUCHUS("sarchosuchus", DNATier.COMMON),
+    DILOPHOSAURUS("dilophosaurus", DNATier.UNCOMMON),
+    GIGANTOSAURUS("giganotosaurus", DNATier.VERY_RARE),
+    GIRAFFTITAN("girafftitan", DNATier.VERY_RARE),
+    HERRERASAURUS("herrerasaurus", DNATier.UNCOMMON),
+    IBEROSPINUS("iberospinus", DNATier.RARE),
+    ICHTYOVENATOR("ichtyovenator", DNATier.RARE),
+    INDOMINUS_REX("indominus_rex", true, DNATier.RARE),
+    INDORAPTOR("indoraptor", true, DNATier.RARE),
+    MOROS_INTREPIDUS("moros_intrepidus", DNATier.UNCOMMON),
+    MOSASAURUS("mosasaurus", DNATier.EPIC),
+    OVIRAPTOR("oviraptor", DNATier.UNCOMMON),
+    PYRORAPTOR("pyroraptor", DNATier.UNCOMMON),
+    QIANZHOUSAURUS("qianzhousaurus", DNATier.RARE),
+    SARCHOSUCHUS("sarchosuchus", DNATier.VERY_RARE),
     SCORPIOS_REX("scorpios_rex", true, DNATier.COMMON),
-    SIAMOSAURUS("siamosaurus", DNATier.COMMON),
-    SIAMOSAURUSG2("siamosaurusg2", DNATier.COMMON),
-    SKORPIOVENATOR("skorpiovenator", DNATier.COMMON),
-    SPINOJP3("spinosaurus_jp3", DNATier.COMMON),
-    SPINOG2("spinosaurusg2", DNATier.COMMON),
-    SUCHOMIMUS("suchomimus", DNATier.COMMON),
-    SUSSYAMOGUSAURUS("sussyamogusaurus", DNATier.COMMON),
+    SIAMOSAURUS("siamosaurus", DNATier.VERY_RARE),
+    SIAMOSAURUSG2("siamosaurusg2", DNATier.VERY_RARE),
+    SKORPIOVENATOR("skorpiovenator", DNATier.RARE),
+    SPINOJP3("spinosaurus_jp3", DNATier.VERY_RARE),
+    SPINOG2("spinosaurusg2", DNATier.VERY_RARE),
+    SUCHOMIMUS("suchomimus", DNATier.RARE),
+    SUSSYAMOGUSAURUS("sussyamogusaurus", DNATier.MYTHICALLY_RARE),
     TARBOSAURUS("tarbosaurus", DNATier.COMMON),
-    TYRANOSAURUS("tyranosaurus", DNATier.COMMON),
-    VELOCIRAPTOR("velociraptor", DNATier.COMMON)
+    TYRANOSAURUS("tyranosaurus", DNATier.VERY_RARE),
+    VELOCIRAPTOR("velociraptor", DNATier.UNCOMMON)
     ;
 
     private final String name;
@@ -78,7 +78,7 @@ public enum Dino {
     }
 
     public static Dino getDinoByItem(Item item) {
-        for (Dino dino : values()) {
+        for (Dino dino : Arrays.stream(values()).filter(dino -> dino != Dino.EMPTY).toList()) {
             if(dino.getSyringeItem() == item) {
                 return dino;
             }

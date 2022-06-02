@@ -35,7 +35,7 @@ import software.bernie.geckolib3.GeckoLib;
 public class Alternacraft {
     public static final String MOD_ID = "alternacraft";
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public Alternacraft() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();

@@ -199,7 +199,7 @@ public class ModItems {
     public static void onRegisterItems(IForgeRegistry<Item> registry) {
         var resources = Dino.values();
 
-        Arrays.stream(resources).forEach(dino -> {
+        Arrays.stream(resources).filter(d -> d != Dino.EMPTY).forEach(dino -> {
             Item syringeItem = null;
 
             if (syringeItem == null) {
