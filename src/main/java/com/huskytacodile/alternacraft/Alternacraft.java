@@ -8,6 +8,7 @@ import com.huskytacodile.alternacraft.entities.ModEntityTypes;
 import com.huskytacodile.alternacraft.entities.ModVillagers;
 import com.huskytacodile.alternacraft.item.ModItems;
 import com.huskytacodile.alternacraft.recipe.ModRecipes;
+import com.huskytacodile.alternacraft.screen.DNAInsertionTableScreen;
 import com.huskytacodile.alternacraft.screen.FossilGrinderScreen;
 import com.huskytacodile.alternacraft.screen.ModMenuTypes;
 import com.huskytacodile.alternacraft.util.ModItemProperties;
@@ -108,5 +109,6 @@ public class Alternacraft {
     private void clientSetup(final FMLClientSetupEvent event)
     {
         MenuScreens.register(ModMenuTypes.FOSSIL_GRINDER.get(), FossilGrinderScreen::new);
+        MenuScreens.register(ModMenuTypes.DNA_INSERTION_TABLE.get(), DNAInsertionTableScreen::new);
     }
 }

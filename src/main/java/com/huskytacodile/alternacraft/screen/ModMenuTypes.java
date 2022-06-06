@@ -18,6 +18,8 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<FossilGrinderMenu>> FOSSIL_GRINDER =
             registerMenuType(FossilGrinderMenu::new, "fossil_grinder");
+    public static final RegistryObject<MenuType<DNAInsertionTableMenu>> DNA_INSERTION_TABLE =
+            registerMenuType(DNAInsertionTableMenu::new,"dna_insertion_table");
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {
